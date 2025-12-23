@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu | Tuyến Droppii</title>
+    <meta name="description" content="Tuyến Droppii - Chuyên gia nước ion kiềm hàng đầu Việt Nam. Công nghệ lọc nước điện giải tiên tiến từ Hàn Quốc, mang lại sức khỏe tốt cho gia đình bạn.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;500;600;700;900&display=swap&subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Page-specific (compact) -->
+    <style>
+        /* gioithieu.html minimal layout helpers */
+        .about-intro { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; align-items:center; }
+        .about-media { border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); }
+        .about-media img { width:100%; height:auto; display:block; }
+        .about-list { list-style:none; padding:0; margin:1rem 0 0; display:flex; flex-direction:column; gap:.6rem; }
+        .about-list li { display:flex; align-items:flex-start; gap:.6rem; color:var(--gray-700); }
+        .about-list li i { color:var(--success-color); margin-top:.2rem; }
+        .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem; }
+        .stat-card { background:#fff; border:1px solid var(--gray-200); border-radius:var(--radius); padding:1.25rem; text-align:center; box-shadow:var(--shadow-sm); }
+        .stat-number { font-family:'Poppins',sans-serif; font-weight:900; font-size:2rem; color:var(--primary-color); }
+        .stat-label { color:var(--gray-600); margin-top:.35rem; font-weight:600; }
+        .timeline { display:grid; gap:1rem; }
+        .timeline-item { background:#fff; border:1px solid var(--gray-200); border-radius:var(--radius); padding:1rem 1.25rem; box-shadow:var(--shadow-sm); }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo brand">
+              <img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii">
+              <span>Tuyến Droppii</span>
+            </a>
+            <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+            <ul class="navbar-nav" id="navMenu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html" class="active">Giới thiệu</a></li>
+                <li class="dropdown">
+                    <a href="#products" class="dropdown-toggle">Sản phẩm <i class="fas fa-chevron-down chevron"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products.html"><i class="fas fa-water"></i> TGNL</a></li>
+                        <li><a href="kuchen.html"><i class="fas fa-fire"></i> Kuchen</a></li>
+                        <li><a href="trungbay.html"><i class="fas fa-bolt"></i> Ionpia</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#technology">Công nghệ</a></li>
+                <li><a href="khachhang.html">Khách hàng</a></li>
+                <li><a href="baohanh.html">Bảo hành</a></li>
+                <li><a href="kienthuc.html">Sống Khỏe</a></li>
+                <li><a href="index.html#contact">Liên hệ</a></li>
+            </ul>
+            <a href="index.html#contact" class="navbar-btn">Tư vấn miễn phí</a>
+        </div>
+    </nav>
+
+    <header class="hero-header">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Về Tuyến Droppii</h1>
+                    <p class="subtitle">Sứ mệnh mang đến giải pháp nước tốt cho sức khỏe với dịch vụ tận tâm.</p>
+                    <div class="hero-cta">
+                        <a href="products.html" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>Sản phẩm</a>
+                        <a href="index.html#contact" class="btn btn-secondary"><i class="fas fa-phone"></i>Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Intro: image + bullets -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Chúng tôi là ai</h2>
+                    <p class="section-subtitle">Tiên phong giải pháp nước ion kiềm cho sức khỏe gia đình Việt</p>
+                </div>
+                <div class="about-intro">
+                    <div class="about-media">
+                        <img src="ANHSP/gt1.jpg" alt="Giới thiệu Tuyến Droppii">
+                    </div>
+                    <div>
+                        <div class="card" style="padding:1.25rem">
+                            <h3 style="margin:0 0 .75rem; color:var(--gray-800)">Sứ mệnh & định hướng</h3>
+                            <p style="margin:.25rem 0 1rem; color:var(--gray-600)">Mang nguồn nước sạch, an toàn, giàu khoáng đến mọi gia đình bằng công nghệ điện giải chuẩn quốc tế.</p>
+                            <ul class="about-list">
+                                <li><i class="fas fa-check-circle"></i><span>Nước sạch 99.9% – an toàn, vị tự nhiên</span></li>
+                                <li><i class="fas fa-check-circle"></i><span>Công nghệ Hàn Quốc – hiệu quả, bền bỉ</span></li>
+                                <li><i class="fas fa-check-circle"></i><span>Đội ngũ tư vấn & lắp đặt tận tâm 24/7</span></li>
+                                <li><i class="fas fa-check-circle"></i><span>Bảo hành, bảo trì rõ ràng – minh bạch</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core values -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Giá trị cốt lõi</h2>
+                    <p class="section-subtitle">Tập trung vào chất lượng, trải nghiệm và sức khỏe lâu dài</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                        <h4>Đổi mới</h4>
+                        <p>Liên tục cập nhật công nghệ lọc & điện giải mới nhất.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4>An toàn</h4>
+                        <p>Chuẩn chất lượng nghiêm ngặt, vật liệu đạt chứng nhận.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                        <h4>Dịch vụ</h4>
+                        <p>Tư vấn – lắp đặt – hậu mãi nhanh chóng, tận tâm.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+                        <h4>Công nghệ</h4>
+                        <p>Điện giải ion kiềm, lọc RO/UF đa tầng tối ưu.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-scale-balanced"></i></div>
+                        <h4>Minh bạch</h4>
+                        <p>Báo giá rõ ràng, chính sách bảo hành công khai.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                        <h4>Bền vững</h4>
+                        <p>Giải pháp tiết kiệm, thân thiện môi trường.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Thành tựu & cam kết</h2>
+                    <p class="section-subtitle">Con số biết nói về chất lượng và niềm tin</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Năm kinh nghiệm</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Khách hàng</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Độ sạch nước</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Hỗ trợ</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline / Journey -->
+        <section class="section" style="background:#fff">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Hành trình phát triển</h2>
+                    <p class="section-subtitle">Từng bước hoàn thiện để phục vụ tốt hơn</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4 style="margin:.25rem 0; color:var(--gray-800)"><i class="fas fa-flag-checkered"></i> Khởi đầu</h4>
+                        <p style="margin:.25rem 0; color:var(--gray-600)">Xây dựng tiêu chuẩn dịch vụ & lựa chọn đối tác công nghệ uy tín.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 style="margin:.25rem 0; color:var(--gray-800)"><i class="fas fa-people-carry-box"></i> Mở rộng</h4>
+                        <p style="margin:.25rem 0; color:var(--gray-600)">Phủ rộng dịch vụ lắp đặt – bảo trì, nâng cấp trải nghiệm khách hàng.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 style="margin:.25rem 0; color:var(--gray-800)"><i class="fas fa-star"></i> Bứt phá</h4>
+                        <p style="margin:.25rem 0; color:var(--gray-600)">Chuẩn hóa quy trình, đa dạng hóa danh mục máy lọc & gia dụng.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="card" style="display:flex; gap:1rem; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+                    <div>
+                        <h3 style="margin:.25rem 0; color:var(--gray-800)">Cần tư vấn giải pháp phù hợp?</h3>
+                        <p style="margin:0; color:var(--gray-600)">Liên hệ ngay – đội ngũ sẵn sàng hỗ trợ chọn máy theo nhu cầu thực tế.</p>
+                    </div>
+                    <div style="display:flex; gap:.5rem;">
+                        <a href="products.html" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Xem sản phẩm</a>
+                        <a href="index.html#contact" class="btn btn-secondary"><i class="fas fa-phone"></i> Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- QR Code and Call Buttons -->
+    <div class="qr-code-container">
+        <a href="tel:0942853326" class="call-now-toggle">
+            <i class="fas fa-phone"></i>
+            <span>Gọi ngay</span>
+        </a>
+        
+        <div class="qr-code-toggle" onclick="toggleQRCode()">
+            <i class="fas fa-qrcode"></i>
+            <span>QR Code</span>
+        </div>
+        
+        <div class="qr-code-content">
+            <img src="ANHSP/qrcode.png" alt="QR Code Tuyến Droppii">
+            <p>Quét mã QR để liên hệ nhanh qua Zalo</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sản phẩm</h3>
+                    <ul>
+                        <li><a href="products.html">Máy lọc nước ion kiềm</a></li>
+                        <li><a href="kuchen.html">Bếp từ Kuchen</a></li>
+                        <li><a href="trungbay.html">Ionpia</a></li>
+                        <li><a href="sudung.html">Hướng dẫn sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hỗ trợ</h3>
+                    <ul>
+                        <li><a href="baohanh.html">Chính sách bảo hành</a></li>
+                        <li><a href="muahang.html">Hướng dẫn mua hàng</a></li>
+                        <li><a href="thanhtoan.html">Phương thức thanh toán</a></li>
+                        <li><a href="cauhoi.html">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 315/9 Kha Vạn Cân, Phường Hiệp Bình Chánh, Quận Thủ Đức, TP.HCM</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:bophanhotrohuyhoang@gmail.com">bophanhotrohuyhoang@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:0942853326">094 285 3326</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Bản đồ</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8025975232003!2d106.7120874!3d10.8264136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f294a19919%3A0xd3ebec144576d4ce!2zxJBp4buHbiBM4bqhbmggSHV5IEhvw6BuZw!5e0!3m2!1svi!2s!4v1754197601066!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/quanghatuyen6789" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/hoanghuy04081971/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>Bản quyền © 2025 Tuyến Droppii. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+
+</body>
+</html>

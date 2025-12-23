@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ION-6200 | Tuyến Droppii</title>
+  <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Poppins:wght@700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ...nav same pattern... -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo brand"><img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii"><span>Tuyến Droppii</span></a>
+      <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="trungbay.html" class="active">Ionpia</a></li>
+        <li><a href="products.html">TGNL</a></li>
+        <li><a href="kuchen.html">Kuchen</a></li>
+        <li><a href="index.html#contact">Liên hệ</a></li>
+      </ul>
+      <a href="index.html#contact" class="navbar-btn">Tư vấn miễn phí</a>
+    </div>
+  </nav>
+
+  <header class="hero-header">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>ION-6200</h1>
+        <p class="subtitle">Máy điện giải Ionpia – hiệu quả, bền bỉ cho gia đình hiện đại.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card"><img src="ANHSP/h1.jpg" alt="ION-6200"></div>
+        <div class="card">
+          <h2 class="section-title" style="-webkit-text-fill-color: initial;">Thông tin sản phẩm</h2>
+          <ul>
+            <li>Điện cực titan phủ bạch kim, hiệu suất ổn định.</li>
+            <li>7 mức pH, nước kiềm giàu hydrogen.</li>
+            <li>Tự vệ sinh điện cực, hiển thị thông minh.</li>
+          </ul>
+          <p class="section-subtitle" style="margin:1rem 0 .5rem;">Giá gốc: <span class="price">29.900.000đ</span></p>
+          <div class="grid" style="grid-template-columns: auto auto; gap:.75rem;">
+            <a class="navbar-btn" href="order.html?name=ION-6200&price=29900000&img=ANHSP/h1.jpg"><i class="fas fa-cart-plus"></i>&nbsp;Đặt hàng nhanh</a>
+            <a class="navbar-btn" href="tel:0942853326" style="background:linear-gradient(135deg,#16a34a,#15803d)"><i class="fas fa-phone"></i>&nbsp;Gọi tư vấn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ...features, qr, footer same pattern... -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Tính năng nổi bật</h2>
+        <p class="section-subtitle">Chất lượng nước tốt, trải nghiệm tiện lợi</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-droplet"></i></div><h4>Hydrogen cao</h4><p>Vị nước dễ uống, hỗ trợ sức khỏe.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h4>An toàn</h4><p>Vật liệu đạt chuẩn, bền bỉ.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-sliders-h"></i></div><h4>Đa chế độ</h4><p>Tối ưu cho uống, nấu, pha chế.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="qr-code-container">
+    <a href="tel:0942853326" class="call-now-toggle"><i class="fas fa-phone"></i><span>Gọi ngay</span></a>
+    <div class="qr-code-toggle" onclick="toggleQRCode()"><i class="fas fa-qrcode"></i><span>QR</span></div>
+    <div class="qr-code-content"><img src="ANHSP/qrcode.png" alt="QR"><p>Quét mã Zalo</p></div>
+  </div>
+
+  <footer><div class="container"><div class="footer-bottom"><p>Bản quyền © 2025 Tuyến Droppii. Tất cả quyền được bảo lưu.</p></div></div></footer>
+  <script src="common.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuchen | Tuyến Droppii</title>
+    <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;500;600;700;900&display=swap&subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo brand">
+              <img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii">
+              <span>Tuyến Droppii</span>
+            </a>
+            <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+            <ul class="navbar-nav" id="navMenu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li class="dropdown">
+                    <a href="#products" class="dropdown-toggle">Sản phẩm <i class="fas fa-chevron-down chevron"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products.html"><i class="fas fa-water"></i> TGNL</a></li>
+                        <li><a href="kuchen.html" class="active"><i class="fas fa-fire"></i> Kuchen</a></li>
+                        <li><a href="trungbay.html"><i class="fas fa-bolt"></i> Ionpia</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#technology">Công nghệ</a></li>
+                <li><a href="khachhang.html">Khách hàng</a></li>
+                <li><a href="baohanh.html">Bảo hành</a></li>
+                <li><a href="kienthuc.html">Sống Khỏe</a></li>
+                <li><a href="index.html#contact">Liên hệ</a></li>
+            </ul>
+            <a href="index.html#contact" class="navbar-btn">Tư vấn miễn phí</a>
+        </div>
+    </nav>
+    <header class="hero-header">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Thiết Bị Nhà Bếp Kuchen</h1>
+                    <p class="subtitle">Tinh hoa công nghệ và thiết kế chuẩn Đức – tối ưu hiệu suất, an toàn và thẩm mỹ cho gian bếp hiện đại.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="catalog-header">
+          <nav class="breadcrumbs">
+            <a href="index.html">Trang chủ</a><span>/</span><a href="products.html">Sản phẩm</a><span>/</span><span>Kuchen</span>
+          </nav>
+        </div>
+        <div class="section-header">
+          <h2 class="section-title">Danh Mục Sản Phẩm</h2>
+          <p class="section-subtitle">Lựa chọn đa dạng đáp ứng mọi nhu cầu nấu nướng và vận hành bếp thông minh</p>
+        </div>
+        <div class="kuchen-products-grid">
+          <div class="kuchen-card">
+            <span class="badge badge-best">Bán chạy</span>
+            <img src="ANHSP/i11.jpg" alt="Bếp Từ Kuchen">
+            <h3>Bếp Từ Kuchen</h3>
+            <p>Nấu nhanh với Booster, hẹn giờ từng vùng, khóa trẻ em an toàn.</p>
+            <p class="price">Giá gốc: 12.990.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=induction" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <img src="ANHSP/i12.jpg" alt="Lò Nướng Kuchen">
+            <h3>Lò Nướng Kuchen</h3>
+            <p>Đối lưu đa chiều, nhiều chương trình tự động, cửa kính 3 lớp.</p>
+            <p class="price">Giá gốc: 9.990.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=oven" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <img src="ANHSP/i13.jpg" alt="Lò Vi Sóng Kuchen">
+            <h3>Lò Vi Sóng Kuchen</h3>
+            <p>Rã đông thông minh, hâm nóng đều, thao tác cảm ứng tiện lợi.</p>
+            <p class="price">Giá gốc: 4.990.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=microwave" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <img src="ANHSP/i14.jpg" alt="Máy Hút Mùi Kuchen">
+            <h3>Máy Hút Mùi Kuchen</h3>
+            <p>3 tốc độ hút, than hoạt tính/ống thoát, vận hành êm ái.</p>
+            <p class="price">Giá gốc: 6.490.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=hood" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <img src="ANHSP/i15.jpg" alt="Máy Rửa Bát Kuchen">
+            <h3>Máy Rửa Bát Kuchen</h3>
+            <p>Nhiều chương trình rửa, sấy khô hiệu quả, tiết kiệm nước/điện.</p>
+            <p class="price">Giá gốc: 11.990.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=dishwasher" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <img src="ANHSP/i16.jpg" alt="Bếp Điện Kuchen">
+            <h3>Bếp Điện Kuchen</h3>
+            <p>2 vòng nhiệt linh hoạt, mặt kính chịu lực, dễ vệ sinh.</p>
+            <p class="price">Giá gốc: 7.990.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=electric-hob" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <img src="ANHSP/i17.jpg" alt="Lò Nướng Âm Tủ Kuchen">
+            <h3>Lò Nướng Âm Tủ Kuchen</h3>
+            <p>Kích thước âm tủ 60cm, đối lưu, hẹn giờ tiện dụng.</p>
+            <p class="price">Giá gốc: 14.990.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=builtin-oven" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <img src="ANHSP/i18.jpg" alt="Bếp Hồng Ngoại Kuchen">
+            <h3>Bếp Hồng Ngoại Kuchen</h3>
+            <p>2 vòng nhiệt, dùng mọi loại nồi, giữ nhiệt lâu và ổn định.</p>
+            <p class="price">Giá gốc: 5.990.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=infrared-hob" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <span class="badge badge-hot">Hot</span>
+            <img src="ANHSP/i15.jpg" alt="Máy Rửa Bát Kuchen">
+            <h3>Máy Rửa Bát Kuchen</h3>
+            <p>Hệ thống lọc cặn, sấy tăng cường, vận hành ổn định.</p>
+            <p class="price">Giá gốc: 11.990.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=dishwasher" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <span class="badge badge-new">Mới</span>
+            <img src="ANHSP/i19.jpg" alt="Lò Nướng Đa Năng Kuchen">
+            <h3>Lò Nướng Đa Năng Kuchen</h3>
+            <p>Kết hợp hấp + nướng đối lưu, giữ trọn dinh dưỡng món ăn.</p>
+            <p class="price">Giá gốc: 18.990.000đ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=multi-oven" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+
+          <!-- ===== Kuchen.vn additional products (placeholders) ===== -->
+          <!-- Tip: Replace src with downloaded images you own: ANHSP/kuchen/<file>.jpg -->
+          <div class="kuchen-card">
+            <span class="badge badge-new">Mới</span>
+            <img src="ANHSP/KUCHEN/b3.jpg" alt="Bếp Từ Âm 3 Vùng">
+            <h3>Bếp Từ Âm 3 Vùng</h3>
+            <p>3 vùng nấu độc lập, Booster, nhận diện nồi và chống tràn.</p>
+            <p class="price">Liên hệ</p>
+            <div class="card-actions">
+              <a href="product-kuchen-induction-3z.html" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+
+          <div class="kuchen-card">
+            <img src="ANHSP/KUCHEN/b4.jpg" alt="Bếp điện từ KUCHEN KU MI272">
+            <h3>Bếp điện từ KUCHEN KU MI272</h3>
+            <p>Bếp đôi công suất lớn, điều khiển trượt nhạy, cảnh báo dư nhiệt.</p>
+            <p class="price">Liên hệ</p>
+            <div class="card-actions">
+              <a href="product-kuchen-mi272.html" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+
+          <div class="kuchen-card">
+            <img src="ANHSP/KUCHEN/b5.jpg" alt="Bếp Điện Từ Kết Hợp KU GEI 288">
+            <h3>Bếp Điện Từ Kết Hợp KU GEI 288</h3>
+            <p>1 vùng từ + 1 hồng ngoại, linh hoạt mọi nồi chảo, hẹn giờ.</p>
+            <p class="price">Liên hệ</p>
+            <div class="card-actions">
+              <a href="product-kuchen-gei-288.html" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+
+          <div class="kuchen-card">
+            <img src="ANHSP/KUCHEN/b6.jpg" alt="Lò Nướng 72L Đối Lưu">
+            <h3>Lò Nướng 72L Đối Lưu</h3>
+            <p>Dung tích lớn 72L, đối lưu đa chiều, cửa kính 3 lớp an toàn.</p>
+            <p class="price">Liên hệ</p>
+            <div class="card-actions">
+              <a href="product-kuchen-oven-72l.html" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <!-- ===== End additional products ===== -->
+
+          <!-- New sync add-ons -->
+          <div class="kuchen-card">
+            <span class="badge badge-hot">Hot</span>
+            <img src="ANHSP/i14.jpg" alt="Máy Hút Mùi Kính Phẳng">
+            <h3>Máy Hút Mùi Kính Phẳng</h3>
+            <p>Thiết kế phẳng tối giản, hút nhanh, dễ vệ sinh bề mặt.</p>
+            <p class="price">Liên hệ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=flat-hood" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+          <div class="kuchen-card">
+            <span class="badge badge-new">Mới</span>
+            <img src="ANHSP/i15.jpg" alt="Máy Sấy Chén Kuchen">
+            <h3>Máy Sấy Chén Kuchen</h3>
+            <p>Sấy khử khuẩn, giảm ẩm mốc, phù hợp gia đình hiện đại.</p>
+            <p class="price">Liên hệ</p>
+            <div class="card-actions">
+              <a href="kuchen-detail.html?id=dish-dryer" class="kuchen-btn"><i class="fas fa-eye"></i>Chi tiết</a>
+              <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--accent-color),#f97316)"><i class="fas fa-phone"></i>Tư vấn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" style="background:linear-gradient(135deg,#ffffff 0%,#f3f6fa 100%)">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Điểm Mạnh Nổi Bật</h2>
+                <p class="section-subtitle">Thiết kế chuẩn Đức kết hợp công nghệ thông minh tối ưu trải nghiệm sử dụng</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Tiết Kiệm Năng Lượng</h4>
+                    <p>Tối ưu tiêu thụ điện với cảm biến thông minh và vật liệu hiệu suất cao.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>An Toàn Vượt Trội</h4>
+                    <p>Tích hợp tự ngắt, khóa trẻ em và cảnh báo nhiệt dư.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h4>Vệ Sinh Dễ Dàng</h4>
+                    <p>Bề mặt chống bám bẩn, tháo lắp đơn giản, hạn chế dầu mỡ.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+                    <h4>Công Nghệ Thông Minh</h4>
+                    <p>Điều khiển cảm ứng nhạy, lập trình chế độ đa nhiệm chính xác.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h4>Thẩm Mỹ Cao</h4>
+                    <p>Phong cách tối giản châu Âu, hài hòa mọi không gian bếp.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-tools"></i></div>
+                    <h4>Độ Bền Lâu Dài</h4>
+                    <p>Vật liệu cao cấp chịu nhiệt – chống ăn mòn – vận hành ổn định.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USAGE / BENEFITS -->
+    <section class="section">
+        <div class="container">
+            <div class="usage-wrapper">
+                <div class="usage-image">
+                    <img src="ANHSP/i11.jpg" alt="Gian bếp Kuchen">
+                </div>
+                <div class="usage-content">
+                    <h3>Tối Ưu Trải Nghiệm Bếp Hiện Đại</h3>
+                    <ul class="usage-list">
+                        <li><i class="fas fa-check-circle"></i>Gia tăng tốc độ chuẩn bị món ăn cho gia đình bận rộn.</li>
+                        <li><i class="fas fa-check-circle"></i>Giảm thất thoát nhiệt – tiết kiệm chi phí vận hành.</li>
+                        <li><i class="fas fa-check-circle"></i>Hạn chế khói, mùi – giữ bếp luôn thông thoáng sạch sẽ.</li>
+                        <li><i class="fas fa-check-circle"></i>Chế độ nấu chính xác giúp duy trì giá trị dinh dưỡng.</li>
+                        <li><i class="fas fa-check-circle"></i>Bố trí gọn gàng mở rộng không gian thao tác.</li>
+                    </ul>
+                    <p class="usage-note">Liên hệ để được tư vấn cấu hình thiết bị phù hợp nhu cầu thực tế.</p>
+                    <a href="#contact" class="kuchen-btn" style="background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));font-size:.8rem;"><i class="fas fa-phone"></i>Nhận tư vấn miễn phí</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="qr-code-container">
+        <a href="tel:0942853326" class="call-now-toggle">
+            <i class="fas fa-phone"></i>
+            <span>Gọi ngay</span>
+        </a>
+        <div class="qr-code-toggle" onclick="toggleQRCode()">
+            <i class="fas fa-comment-dots"></i>
+            <span>Quét QR ngay</span>
+        </div>
+        <div class="qr-code-content">
+            <img src="ANHSP/qrcode.png" alt="QR Code">
+            <p>Quét mã QR để tận hưởng mua sắm cùng Tuyến Droppii</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sản phẩm</h3>
+                    <ul>
+                        <li><a href="products.html">Máy lọc nước ion kiềm</a></li>
+                        <li><a href="kuchen.html">Bếp từ Kuchen</a></li>
+                        <li><a href="trungbay.html">Ionpia</a></li>
+                        <li><a href="sudung.html">Hướng dẫn sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hỗ trợ</h3>
+                    <ul>
+                        <li><a href="baohanh.html">Chính sách bảo hành</a></li>
+                        <li><a href="muahang.html">Hướng dẫn mua hàng</a></li>
+                        <li><a href="thanhtoan.html">Phương thức thanh toán</a></li>
+                        <li><a href="cauhoi.html">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 315/9 Kha Vạn Cân, Phường Hiệp Bình Chánh, Quận Thủ Đức, TP.HCM</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:bophanhotrohuyhoang@gmail.com">bophanhotrohuyhoang@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:0942853326">094 285 3326</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Bản đồ</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8025975232003!2d106.7120874!3d10.8264136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f294a19919%3A0xd3ebec144576d4ce!2zxJBp4buHbiBM4bqhbmggSHV5IEhvw6BuZw!5e0!3m2!1svi!2s!4v1754197601066!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/quanghatuyen6789" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/hoanghuy04081971/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>Bản quyền © 2025 Tuyến Droppii. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="common.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bếp Điện Từ Kết Hợp KU GEI 288 | Tuyến Droppii</title>
+  <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Poppins:wght@700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ...navbar with Kuchen active... -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo brand"><img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii"><span>Tuyến Droppii</span></a>
+      <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="products.html">TGNL</a></li>
+        <li><a href="kuchen.html" class="active">Kuchen</a></li>
+        <li><a href="trungbay.html">Ionpia</a></li>
+        <li><a href="index.html#contact">Liên hệ</a></li>
+      </ul>
+      <a href="index.html#contact" class="navbar-btn">Tư vấn miễn phí</a>
+    </div>
+  </nav>
+
+  <header class="hero-header">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Bếp Điện Từ Kết Hợp KU GEI 288</h1>
+        <p class="subtitle">1 vùng từ + 1 vùng hồng ngoại – dùng mọi loại nồi, linh hoạt nấu nướng.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card"><img src="ANHSP/KUCHEN/b5.jpg" alt="Bếp Điện Từ Kết Hợp KU GEI 288"></div>
+        <div class="card">
+          <h2 class="section-title" style="-webkit-text-fill-color: initial;">Thông tin sản phẩm</h2>
+          <ul>
+            <li>1 vùng từ + 1 vùng hồng ngoại, 2 vòng nhiệt.</li>
+            <li>Dùng mọi loại nồi ở vùng hồng ngoại.</li>
+            <li>9 mức công suất, hẹn giờ, Pause.</li>
+            <li>Khóa trẻ em, tự ngắt khi quá nhiệt/quá dòng.</li>
+            <li>Mặt kính chịu lực, dễ vệ sinh.</li>
+          </ul>
+          <p class="section-subtitle" style="margin:1rem 0 .5rem;">Giá gốc: <span class="price">Liên hệ</span></p>
+          <div class="grid" style="grid-template-columns:auto auto; gap:.75rem;">
+            <a class="navbar-btn" href="order.html?name=KU%20GEI%20288&price=0&img=ANHSP/KUCHEN/b5.jpg"><i class="fas fa-cart-plus"></i>&nbsp;Đặt hàng nhanh</a>
+            <a class="navbar-btn" href="tel:0942853326" style="background:linear-gradient(135deg,#16a34a,#15803d)"><i class="fas fa-phone"></i>&nbsp;Gọi tư vấn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ...features... -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header"><h2 class="section-title">Tính năng nổi bật</h2><p class="section-subtitle">Linh hoạt – tiết kiệm – bền bỉ</p></div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-fire"></i></div><h4>2 công nghệ</h4><p>Từ + hồng ngoại đáp ứng mọi món.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h4>Bảo vệ đa lớp</h4><p>Quá nhiệt/quá dòng/khóa trẻ em.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-leaf"></i></div><h4>Tiết kiệm</h4><p>Hiệu suất cao, giảm thất thoát nhiệt.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="qr-code-container">
+    <a href="tel:0942853326" class="call-now-toggle"><i class="fas fa-phone"></i><span>Gọi ngay</span></a>
+    <div class="qr-code-toggle" onclick="toggleQRCode()"><i class="fas fa-qrcode"></i><span>QR</span></div>
+    <div class="qr-code-content"><img src="ANHSP/qrcode.png" alt="QR"><p>Quét mã Zalo</p></div>
+  </div>
+
+  <footer><div class="container"><div class="footer-bottom"><p>Bản quyền © 2025 Tuyến Droppii. Tất cả quyền được bảo lưu.</p></div></div></footer>
+  <script src="common.js"></script>
+</body>
+</html>

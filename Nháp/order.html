@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Hàng Sản Phẩm - Tuyến Droppii</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;500;600;700;900&display=swap&subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Add navbar (if you intend to unify) or update existing brand reference -->
+    <!-- Example insertion at top if adding later -->
+    <!-- <nav class="navbar"><div class="container"><a href="index.html" class="logo brand"><img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii"><span>Tuyến Droppii</span></a></div></nav> -->
+
+    <div class="container">
+        <h1>Đặt Hàng Sản Phẩm</h1>
+
+        <form id="orderForm">
+            <div class="section">
+                <h2>Thông tin sản phẩm</h2>
+                <div class="product-info">
+                    <img id="product-img" src="https://via.placeholder.com/100/cccccc/000000?text=Sản+phẩm" alt="Ảnh sản phẩm">
+                    <div class="product-details">
+                        <div class="product-title" id="product-name"></div>
+                        <p class="product-price">Giá: <span id="product-base-price"></span> VNĐ</p>
+                        <div class="quantity-control">
+                            <label for="quantity">Số lượng:</label>
+                            <button type="button" id="decrement-btn">-</button>
+                            <input type="number" id="quantity" name="quantity" value="1" min="1">
+                            <button type="button" id="increment-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Thông tin khách hàng</h2>
+                <div class="form-group">
+                    <label for="name">Họ và tên <span style="color: red;">*</span></label>
+                    <input type="text" id="name" name="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại <span style="color: red;">*</span></label>
+                    <input type="tel" id="phone" name="customerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="customerEmail">
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Thông tin giao hàng</h2>
+                <div class="form-group">
+                    <label for="address">Địa chỉ giao hàng <span style="color: red;">*</span></label>
+                    <textarea id="address" name="deliveryAddress" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="city">Thành phố <span style="color: red;">*</span></label>
+                    <input type="text" id="city" name="deliveryCity" value="Ho Chi Minh City" required>
+                </div>
+                <div class="form-group">
+                    <label for="delivery-notes">Ghi chú giao hàng</label>
+                    <textarea id="delivery-notes" name="deliveryNotes" rows="2"></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Phương thức thanh toán</h2>
+                <div class="payment-option-group">
+                    <input type="radio" id="payment-cod" name="paymentMethod" value="Thanh toán khi nhận hàng (COD)" checked>
+                    <label for="payment-cod">Thanh toán khi nhận hàng (COD)</label>
+                </div>
+                <div class="payment-option-group">
+                    <input type="radio" id="payment-transfer" name="paymentMethod" value="Chuyển khoản ngân hàng">
+                    <label for="payment-transfer">Chuyển khoản ngân hàng</label>
+                    <div id="bank-transfer-details" class="payment-details-hidden">
+                        <div class="bank-details">
+                            <p><strong>Ngân hàng:</strong> Ngân hàng quân đội MBBANK</p>
+                            <p><strong>Số tài khoản:</strong> 09010122005</p>
+                            <p><strong>Chủ tài khoản:</strong> HÀ VIỆT HOÀNG</p>
+                            <p>Vui lòng chuyển khoản với nội dung: `TÊN CỦA BẠN - SĐT - TENSP`</p>
+                        </div>
+                        <div class="qr-code">
+                            <p>Hoặc quét mã QR để thanh toán:</p>
+                            <img src="ANH/TT.png" alt="Mã QR thanh toán">
+                            <p style="font-size: 0.85em; color: #888;">*Vui lòng thay thế ảnh QR code này bằng mã QR VietQR của bạn để thanh toán tiện lợi hơn. Bạn có thể tạo mã QR tại các website như `vietqr.net` hoặc từ ứng dụng ngân hàng của bạn.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Tóm tắt đơn hàng</h2>
+                <div class="order-summary">
+                    <div class="summary-item">
+                        <span>Sản phẩm:</span>
+                        <span><span id="summary-product-name"></span> x <span id="summary-quantity">1</span></span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Giá sản phẩm:</span>
+                        <span><span id="summary-item-price"></span> VNĐ</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Phí giao hàng:</span>
+                        <span>Miễn phí</span>
+                    </div>
+                    <div class="total">
+                        <span>Tổng cộng:</span>
+                        <span><span id="summary-total"></span> VNĐ</span>
+                    </div>
+                </div>
+                <button type="submit">Đặt Hàng Ngay</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const productImg = document.getElementById('product-img');
+        const productNameElem = document.getElementById('product-name');
+        const productBasePriceElem = document.getElementById('product-base-price');
+        const quantityInput = document.getElementById('quantity');
+        const incrementBtn = document.getElementById('increment-btn');
+        const decrementBtn = document.getElementById('decrement-btn');
+        const summaryProductName = document.getElementById('summary-product-name');
+        const summaryQuantity = document.getElementById('summary-quantity');
+        const summaryItemPrice = document.getElementById('summary-item-price');
+        const summaryTotal = document.getElementById('summary-total');
+
+        // Default product if no parameters are passed from products.html
+        // Đã cập nhật giá mặc định để tránh hiển thị 0 khi truy cập trực tiếp
+        let currentProduct = {
+            img: 'https://via.placeholder.com/100/cccccc/000000?text=Sản+phẩm',
+            name: 'Máy lọc nước ion kiềm cao cấp', // Sản phẩm mặc định
+            price: 15000000 // Giá mặc định
+        };
+
+        const paymentMethodRadios = document.querySelectorAll('input[name="paymentMethod"]');
+        const bankTransferDetails = document.getElementById('bank-transfer-details');
+        const orderForm = document.getElementById('orderForm');
+
+        function formatCurrency(amount) {
+            return amount.toLocaleString('vi-VN');
+        }
+
+        function getQueryParams() {
+            const params = {};
+            window.location.search.substring(1).split('&').forEach(pair => {
+                const [key, value] = pair.split('=').map(decodeURIComponent);
+                params[key] = value;
+            });
+            return params;
+        }
+
+        function loadProductDetails() {
+            const params = getQueryParams();
+            if (params.img && params.name && params.price) {
+                currentProduct.img = params.img;
+                currentProduct.name = params.name;
+                // Đảm bảo giá được phân tích cú pháp đúng, nếu không thì dùng giá mặc định
+                const parsedPrice = parseInt(params.price);
+                currentProduct.price = isNaN(parsedPrice) ? currentProduct.price : parsedPrice;
+            }
+
+            productImg.src = currentProduct.img;
+            productNameElem.textContent = currentProduct.name;
+            productBasePriceElem.textContent = formatCurrency(currentProduct.price);
+            summaryProductName.textContent = currentProduct.name;
+            updateSummary();
+        }
+
+        function updateSummary() {
+            let quantity = parseInt(quantityInput.value);
+            if (isNaN(quantity) || quantity < 1) {
+                quantity = 1;
+                quantityInput.value = 1;
+            }
+
+            summaryQuantity.textContent = quantity;
+            const totalPrice = currentProduct.price * quantity;
+
+            summaryItemPrice.textContent = formatCurrency(currentProduct.price);
+            summaryTotal.textContent = formatCurrency(totalPrice);
+        }
+
+        incrementBtn.addEventListener('click', () => {
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            updateSummary();
+        });
+
+        decrementBtn.addEventListener('click', () => {
+            const currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+            updateSummary();
+        });
+
+        quantityInput.addEventListener('change', updateSummary);
+        quantityInput.addEventListener('keyup', updateSummary);
+
+        paymentMethodRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (document.getElementById('payment-transfer').checked) {
+                    bankTransferDetails.classList.remove('payment-details-hidden');
+                } else {
+                    bankTransferDetails.classList.add('payment-details-hidden');
+                }
+            });
+        });
+
+        // Xử lý gửi dữ liệu qua email (mailto:)
+        orderForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Ngăn chặn hành vi gửi form mặc định
+
+            const formData = new FormData(orderForm);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+
+            // Lấy thông tin sản phẩm và tổng tiền từ DOM hiện tại
+            const orderedProductName = summaryProductName.textContent;
+            const orderedQuantity = summaryQuantity.textContent;
+            const finalTotalPrice = summaryTotal.textContent;
+
+            const emailSubject = `Đơn hàng mới từ Tuyến Droppi - ${orderedProductName}`;
+            let emailBody = `Kính gửi Tuyến Droppi,\n\n`;
+            emailBody += `Có một đơn hàng mới từ website của bạn:\n\n`;
+            
+            emailBody += `----- THÔNG TIN SẢN PHẨM -----\n`;
+            emailBody += `Sản phẩm: ${orderedProductName}\n`;
+            emailBody += `Số lượng: ${orderedQuantity}\n`;
+            emailBody += `Tổng tiền: ${finalTotalPrice} VNĐ\n\n`;
+
+            emailBody += `----- THÔNG TIN KHÁCH HÀNG -----\n`;
+            emailBody += `Họ và tên: ${data.customerName || 'Không có'}\n`;
+            emailBody += `Số điện thoại: ${data.customerPhone || 'Không có'}\n`;
+            emailBody += `Email: ${data.customerEmail || 'Không có'}\n\n`;
+
+            emailBody += `----- THÔNG TIN GIAO HÀNG -----\n`;
+            emailBody += `Địa chỉ: ${data.deliveryAddress || 'Không có'}, ${data.deliveryCity || 'Không có'}\n`;
+            emailBody += `Ghi chú: ${data.deliveryNotes || 'Không có'}\n\n`;
+
+            emailBody += `----- PHƯƠNG THỨC THANH TOÁN -----\n`;
+            emailBody += `Phương thức: ${data.paymentMethod || 'Không có'}\n\n`;
+
+            emailBody += `Trân trọng,\nKhách hàng.`;
+
+            // Địa chỉ email nhận đơn hàng của bạn
+            const yourEmail = 'bophanhotrohuyhoang@gmail.com';
+
+            const mailtoLink = `mailto:${yourEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            window.location.href = mailtoLink;
+
+            alert("Đơn hàng của bạn đã được gửi thành công! Vui lòng kiểm tra ứng dụng email của bạn để gửi đi thông tin đơn hàng.");
+        });
+
+        // Khởi tạo trạng thái ban đầu
+        loadProductDetails(); // Tải thông tin sản phẩm từ URL
+        if (document.getElementById('payment-cod').checked) {
+            bankTransferDetails.classList.add('payment-details-hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lò Nướng 72L Đối Lưu | Tuyến Droppii</title>
+  <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Poppins:wght@700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ...navbar with Kuchen active... -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo brand"><img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii"><span>Tuyến Droppii</span></a>
+      <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="products.html">TGNL</a></li>
+        <li><a href="kuchen.html" class="active">Kuchen</a></li>
+        <li><a href="trungbay.html">Ionpia</a></li>
+        <li><a href="index.html#contact">Liên hệ</a></li>
+      </ul>
+      <a href="index.html#contact" class="navbar-btn">Tư vấn miễn phí</a>
+    </div>
+  </nav>
+
+  <header class="hero-header">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Lò Nướng 72L Đối Lưu</h1>
+        <p class="subtitle">Dung tích lớn, nướng vàng đều – cửa kính 3 lớp an toàn.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card"><img src="ANHSP/KUCHEN/b6.jpg" alt="Lò Nướng 72L Đối Lưu"></div>
+        <div class="card">
+          <h2 class="section-title" style="-webkit-text-fill-color: initial;">Thông tin sản phẩm</h2>
+          <ul>
+            <li>Dung tích 72L, khoang lớn, đèn chiếu sáng.</li>
+            <li>Đối lưu đa chiều, nhiều chương trình nướng tự động.</li>
+            <li>Cửa kính 3 lớp, cách nhiệt tốt, an toàn.</li>
+            <li>Vệ sinh dễ dàng: khoang tráng men, steam clean.</li>
+            <li>Phụ kiện: khay, vỉ nướng, khay hứng mỡ.</li>
+          </ul>
+          <p class="section-subtitle" style="margin:1rem 0 .5rem;">Giá gốc: <span class="price">Liên hệ</span></p>
+          <div class="grid" style="grid-template-columns:auto auto; gap:.75rem;">
+            <a class="navbar-btn" href="order.html?name=L%C3%B2%20N%C6%B0%E1%BB%9Bng%2072L%20%C4%90%E1%BB%91i%20L%C6%B0u&price=0&img=ANHSP/KUCHEN/b6.jpg"><i class="fas fa-cart-plus"></i>&nbsp;Đặt hàng nhanh</a>
+            <a class="navbar-btn" href="tel:0942853326" style="background:linear-gradient(135deg,#16a34a,#15803d)"><i class="fas fa-phone"></i>&nbsp;Gọi tư vấn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ...features... -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header"><h2 class="section-title">Tính năng nổi bật</h2><p class="section-subtitle">Dung tích lớn – nướng đều – an toàn</p></div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-wind"></i></div><h4>Đối lưu đa chiều</h4><p>Nhiệt lan tỏa đều, hạn chế cháy xém.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-layer-group"></i></div><h4>Kính 3 lớp</h4><p>Giảm thất thoát nhiệt, an toàn chạm tay.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-broom"></i></div><h4>Dễ vệ sinh</h4><p>Khe, khoang ít bám bẩn, lau sạch nhanh.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="qr-code-container">
+    <a href="tel:0942853326" class="call-now-toggle"><i class="fas fa-phone"></i><span>Gọi ngay</span></a>
+    <div class="qr-code-toggle" onclick="toggleQRCode()"><i class="fas fa-qrcode"></i><span>QR</span></div>
+    <div class="qr-code-content"><img src="ANHSP/qrcode.png" alt="QR"><p>Quét mã Zalo</p></div>
+  </div>
+
+  <footer><div class="container"><div class="footer-bottom"><p>Bản quyền © 2025 Tuyến Droppii. Tất cả quyền được bảo lưu.</p></div></div></footer>
+  <script src="common.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IONPIA 5100 | Tuyến Droppii</title>
+  <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Poppins:wght@700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ...nav same pattern... -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo brand"><img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii"><span>Tuyến Droppii</span></a>
+      <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="trungbay.html" class="active">Ionpia</a></li>
+        <li><a href="products.html">TGNL</a></li>
+        <li><a href="kuchen.html">Kuchen</a></li>
+        <li><a href="index.html#contact">Liên hệ</a></li>
+      </ul>
+      <a href="index.html#contact" class="navbar-btn">Tư vấn miễn phí</a>
+    </div>
+  </nav>
+
+  <header class="hero-header">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>IONPIA 5100</h1>
+        <p class="subtitle">Dòng máy điện giải ion kiềm cao cấp – hiệu suất và độ bền vượt trội.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card"><img src="ANHSP/h2.jpg" alt="IONPIA 5100"></div>
+        <div class="card">
+          <h2 class="section-title" style="-webkit-text-fill-color: initial;">Thông tin sản phẩm</h2>
+          <ul>
+            <li>Tấm điện cực bạch kim, nồng độ hydrogen cao.</li>
+            <li>7 mức pH, phù hợp đa nhu cầu gia đình.</li>
+            <li>Tự động vệ sinh, hiển thị thời gian thực.</li>
+          </ul>
+          <p class="section-subtitle" style="margin:1rem 0 .5rem;">Giá gốc: <span class="price">36.900.000đ</span></p>
+          <div class="grid" style="grid-template-columns: auto auto; gap:.75rem;">
+            <a class="navbar-btn" href="order.html?name=IONPIA%205100&price=36900000&img=ANHSP/h2.jpg"><i class="fas fa-cart-plus"></i>&nbsp;Đặt hàng nhanh</a>
+            <a class="navbar-btn" href="tel:0942853326" style="background:linear-gradient(135deg,#16a34a,#15803d)"><i class="fas fa-phone"></i>&nbsp;Gọi tư vấn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ...features, qr, footer same pattern... -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Tính năng nổi bật</h2>
+        <p class="section-subtitle">Chất lượng nước tốt, thân thiện sử dụng</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-bars-progress"></i></div><h4>Vận hành ổn định</h4><p>Nguồn nước ổn định, vị tự nhiên.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-water"></i></div><h4>Đa chế độ</h4><p>pH cho nấu ăn, uống trực tiếp, làm đẹp.</p></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fas fa-screwdriver-wrench"></i></div><h4>Dễ bảo trì</h4><p>Tự rửa điện cực, thay lõi nhanh.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="qr-code-container">
+    <a href="tel:0942853326" class="call-now-toggle"><i class="fas fa-phone"></i><span>Gọi ngay</span></a>
+    <div class="qr-code-toggle" onclick="toggleQRCode()"><i class="fas fa-qrcode"></i><span>QR</span></div>
+    <div class="qr-code-content"><img src="ANHSP/qrcode.png" alt="QR"><p>Quét mã Zalo</p></div>
+  </div>
+
+  <footer><div class="container"><div class="footer-bottom"><p>Bản quyền © 2025 Tuyến Droppii. Tất cả quyền được bảo lưu.</p></div></div></footer>
+  <script src="common.js"></script>
+</body>
+</html>

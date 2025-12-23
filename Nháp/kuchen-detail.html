@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sản phẩm Kuchen | Tuyến Droppii</title>
+  <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Poppins:wght@700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo brand"><img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii"><span>Tuyến Droppii</span></a>
+      <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="kuchen.html" class="active">Kuchen</a></li>
+        <li><a href="products.html">TGNL</a></li>
+        <li><a href="trungbay.html">Ionpia</a></li>
+        <li><a href="index.html#contact">Liên hệ</a></li>
+      </ul>
+      <a href="index.html#contact" class="navbar-btn">Tư vấn miễn phí</a>
+    </div>
+  </nav>
+
+  <header class="hero-header">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 id="p-title">Sản phẩm Kuchen</h1>
+        <p class="subtitle" id="p-sub">Thông tin chi tiết sản phẩm bếp và thiết bị nhà bếp Kuchen.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2">
+        <div class="card"><img id="p-img" src="" alt=""></div>
+        <div class="card">
+          <h2 class="section-title" style="-webkit-text-fill-color: initial;" id="p-name">Đang tải...</h2>
+          <ul id="p-features"></ul>
+          <p class="section-subtitle" style="margin:1rem 0 .5rem;">Giá gốc: <span class="price" id="p-price"></span></p>
+          <div class="grid" style="grid-template-columns: auto auto; gap:.75rem;">
+            <a class="navbar-btn" id="p-order" href="#"><i class="fas fa-cart-plus"></i>&nbsp;Đặt hàng nhanh</a>
+            <a class="navbar-btn" href="tel:0942853326" style="background:linear-gradient(135deg,#16a34a,#15803d)"><i class="fas fa-phone"></i>&nbsp;Gọi tư vấn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Tính năng nổi bật</h2>
+        <p class="section-subtitle">Thiết kế chuẩn Đức – hiệu năng và độ bền cao</p>
+      </div>
+      <div class="features-grid" id="p-benefits"></div>
+    </div>
+  </section>
+
+  <div class="qr-code-container">
+    <a href="tel:0942853326" class="call-now-toggle"><i class="fas fa-phone"></i><span>Gọi ngay</span></a>
+    <div class="qr-code-toggle" onclick="toggleQRCode()"><i class="fas fa-qrcode"></i><span>QR</span></div>
+    <div class="qr-code-content"><img src="ANHSP/qrcode.png" alt="QR"><p>Quét mã Zalo</p></div>
+  </div>
+
+  <footer><div class="container"><div class="footer-bottom"><p>Bản quyền © 2025 Tuyến Droppii. Tất cả quyền được bảo lưu.</p></div></div></footer>
+
+  <script src="common.js"></script>
+  <script>
+    const DB = {
+      induction: {
+        name: 'Bếp Từ Kuchen',
+        img: 'ANHSP/i11.jpg',
+        price: 12990000,
+        features: ['Cảm ứng nhạy, gia nhiệt nhanh', 'Tiết kiệm điện, an toàn', 'Mặt kính chịu lực, dễ vệ sinh'],
+      },
+      oven: {
+        name: 'Lò Nướng Kuchen',
+        img: 'ANHSP/i12.jpg',
+        price: 9990000,
+        features: ['Đối lưu đa chiều', 'Nướng chín đều', 'Nhiều chế độ tự động'],
+      },
+      microwave: {
+        name: 'Lò Vi Sóng Kuchen',
+        img: 'ANHSP/i13.jpg',
+        price: 4990000,
+        features: ['Rã đông thông minh', 'Hâm nóng đều', 'Bảng điều khiển trực quan'],
+      },
+      hood: {
+        name: 'Máy Hút Mùi Kuchen',
+        img: 'ANHSP/i14.jpg',
+        price: 6490000,
+        features: ['Công suất mạnh, êm ái', 'Lưới lọc dễ tháo', 'Tiết kiệm năng lượng'],
+      },
+      dishwasher: {
+        name: 'Máy Rửa Bát Kuchen',
+        img: 'ANHSP/i15.jpg',
+        price: 11990000,
+        features: ['Tiết kiệm nước', 'Sấy khô nhanh', 'Nhiều chương trình rửa'],
+      },
+      'electric-hob': {
+        name: 'Bếp Điện Kuchen',
+        img: 'ANHSP/i16.jpg',
+        price: 7990000,
+        features: ['Gia nhiệt ổn định', 'Mặt kính bền', 'Dễ vệ sinh'],
+      },
+      'builtin-oven': {
+        name: 'Lò Nướng Âm Tủ Kuchen',
+        img: 'ANHSP/i17.jpg',
+        price: 14990000,
+        features: ['Âm tủ thẩm mỹ', 'Cảm ứng hiện đại', 'Tiết kiệm không gian'],
+      },
+      'infrared-hob': {
+        name: 'Bếp Hồng Ngoại Kuchen',
+        img: 'ANHSP/i18.jpg',
+        price: 5990000,
+        features: ['Dùng mọi loại nồi', 'Giữ nhiệt lâu', 'An toàn sử dụng'],
+      },
+      'multi-oven': {
+        name: 'Lò Nướng Đa Năng Kuchen',
+        img: 'ANHSP/i19.jpg',
+        price: 18990000,
+        features: ['Nướng/hấp/đối lưu', 'Đa chế độ', 'Dễ thao tác'],
+      },
+    };
+
+    function fmt(n){ return n.toLocaleString('vi-VN') + 'đ'; }
+    function q(sel){ return document.querySelector(sel); }
+    function getParam(key){ return new URLSearchParams(location.search).get(key); }
+
+    const id = getParam('id');
+    const data = DB[id] || DB['induction'];
+
+    q('#p-title').textContent = data.name;
+    q('#p-name').textContent = 'Thông tin: ' + data.name;
+    q('#p-img').src = data.img; q('#p-img').alt = data.name;
+    q('#p-price').textContent = fmt(data.price);
+
+    const feat = q('#p-features'); feat.innerHTML = '';
+    data.features.forEach(f => { const li = document.createElement('li'); li.textContent = f; feat.appendChild(li); });
+
+    const ben = q('#p-benefits');
+    ben.innerHTML = `
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-gem"></i></div><h4>Vật liệu cao cấp</h4><p>Độ bền và thẩm mỹ cao.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h4>Hiệu năng tối ưu</h4><p>Tiết kiệm điện, vận hành mượt.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h4>An toàn</h4><p>Nhiều cơ chế bảo vệ khi sử dụng.</p></div>
+    `;
+
+    const order = q('#p-order');
+    order.href = `order.html?name=${encodeURIComponent(data.name)}&price=${data.price}&img=${encodeURIComponent(data.img)}`;
+  </script>
+</body>
+</html>

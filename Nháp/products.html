@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm | Tuyến Droppii</title>
+    <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Poppins:wght@700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Page-specific styles for products.html */
+        .product-slider-wrapper {
+            margin-top: 2rem;
+        }
+        
+        .product-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .product-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+        
+        .product-feature i {
+            color: var(--success-color);
+            width: 16px;
+        }
+        
+        .hero-header {
+            margin-top: 80px;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, white 0%, var(--gray-50) 100%);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-color);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--gray-800);
+        }
+
+        .product-description {
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .product-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+
+        .product-feature i {
+            color: var(--success-color);
+            width: 16px;
+        }
+
+        .view-details-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            justify-self: start;
+        }
+
+        .view-details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Featured Product Section */
+        .featured-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .featured-image {
+            position: relative;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .featured-text h2 {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .featured-text p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .featured-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        /* Certificates Section */
+        .certificates-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .certificate-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .certificate-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        /* Call to Action */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-btn.secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-900) 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .footer-section p {
+            color: var(--gray-300);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-700);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: var(--gray-400);
+            margin: 0;
+        }
+
+        /* QR Code and Call Buttons */
+        .qr-code-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .call-now-toggle {
+            background: linear-gradient(135deg, #ff6b35, #ff8e53);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+            border: 3px solid rgba(255,255,255,0.9);
+        }
+
+        .call-now-toggle:hover {
+            transform: scale(1.2);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .call-now-toggle i {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .qr-code-toggle {
+            background: linear-gradient(135deg, #9c27b0, #e91e63);
+            color: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.8rem;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+            border: 3px solid rgba(255,255,255,0.9);
+        }
+
+        .qr-code-toggle:hover {
+            transform: scale(1.2);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .qr-code-toggle i {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .qr-code-content {
+            display: none;
+            position: absolute;
+            bottom: 170px;
+            right: 0;
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-xl);
+            width: 250px;
+            text-align: center;
+            border: 2px solid var(--primary-color);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+
+        .qr-code-container.active .qr-code-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .qr-code-content img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+        }
+
+        .qr-code-content p {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 2rem 0;
+                transition: var(--transition);
+                box-shadow: var(--shadow-xl);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .mobile-menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .mobile-menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .featured-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .qr-code-container {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .call-now-toggle,
+            .qr-code-toggle {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus States for Accessibility */
+        *:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        button:focus,
+        a:focus {
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="logo brand">
+      <img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii">
+      <span>Tuyến Droppii</span>
+    </a>
+    <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+    <ul class="navbar-nav" id="navMenu">
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="gioithieu.html">Giới thiệu</a></li>
+      <li class="dropdown">
+        <a href="#products" class="dropdown-toggle active">Sản phẩm <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="products.html" class="active"><i class="fas fa-water"></i> TGNL</a></li>
+          <li><a href="kuchen.html"><i class="fas fa-fire"></i> Kuchen</a></li>
+          <li><a href="trungbay.html"><i class="fas fa-bolt"></i> Ionpia</a></li>
+        </ul>
+      </li>
+      <li><a href="khachhang.html">Khách hàng</a></li>
+      <li><a href="baohanh.html">Bảo hành</a></li>
+      <li><a href="kienthuc.html">Sống Khỏe</a></li>
+      <li><a href="index.html#contact">Liên hệ</a></li>
+    </ul>
+    <a href="index.html#contact" class="navbar-btn">Tư vấn miễn phí</a>
+  </div>
+</nav>
+
+<header class="hero-header">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>Máy Lọc Nước Ion Kiềm</h1>
+      <p class="subtitle">Công nghệ điện giải – nước tốt cho sức khỏe gia đình bạn.</p>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="catalog-header">
+      <nav class="breadcrumbs">
+        <a href="index.html">Trang chủ</a><span>/</span><span>Sản phẩm</span>
+      </nav>
+    </div>
+    <div class="section-header">
+      <h2 class="section-title">Danh Mục Sản Phẩm</h2>
+      <p class="section-subtitle">Chọn theo nhu cầu sử dụng và ngân sách</p>
+    </div>
+    <div class="grid grid-auto">
+      <a href="product-detail-1.html" class="product-card">
+        <span class="badge badge-best">Bán chạy</span>
+        <img src="ANHSP/BTH-101T-510x510 (1).jpg" alt="Biontech BTH-101T">
+        <h4>Biontech BTH-101T</h4>
+        <p class="price">Giá gốc: 19.990.000đ</p>
+        <span class="buy-btn">Xem chi tiết</span>
+      </a>
+      <a href="product-detail-2.html" class="product-card">
+        <span class="badge badge-hot">Hot</span>
+        <img src="ANHSP/BTM-505N-510x510.jpg" alt="Biontech BTM-505N">
+        <h4>Biontech BTM-505N</h4>
+        <p class="price">Giá gốc: 23.990.000đ</p>
+        <span class="buy-btn">Xem chi tiết</span>
+      </a>
+      <a href="product-detail-3.html" class="product-card">
+        <span class="badge badge-new">Mới</span>
+        <img src="ANHSP/Watek-nóng-lạnh-WT-030S-UF-510x510.png" alt="Watek WT-030S-RO">
+        <h4>Watek WT-030S-RO</h4>
+        <p class="price">Giá gốc: 5.990.000đ</p>
+        <span class="buy-btn">Xem chi tiết</span>
+      </a>
+
+      <!-- New extended products -->
+      <a href="product-detail-4.html" class="product-card">
+        <span class="badge badge-hot">Hot</span>
+        <img src="ANHSP/BTM-505N-510x510.jpg" alt="Biontech BTM-303N">
+        <h4>Biontech BTM-303N</h4>
+        <p class="price">Giá gốc: 17.990.000đ</p>
+        <span class="buy-btn">Xem chi tiết</span>
+      </a>
+      <a href="product-detail-5.html" class="product-card">
+        <span class="badge badge-new">Mới</span>
+        <img src="ANHSP/BTH-101T-510x510 (1).jpg" alt="Biontech BTH-109T">
+        <h4>Biontech BTH-109T</h4>
+        <p class="price">Giá gốc: 21.490.000đ</p>
+        <span class="buy-btn">Xem chi tiết</span>
+      </a>
+      <a href="product-detail-6.html" class="product-card">
+        <span class="badge badge-best">Bán chạy</span>
+        <img src="ANHSP/Watek-nóng-lạnh-WT-030S-UF-510x510.png" alt="Watek WT-060S-RO">
+        <h4>Watek WT-060S-RO</h4>
+        <p class="price">Giá gốc: 6.990.000đ</p>
+        <span class="buy-btn">Xem chi tiết</span>
+      </a>
+      <a href="product-detail-7.html" class="product-card">
+        <span class="badge badge-hot">Hot</span>
+        <img src="ANHSP/Watek-nóng-lạnh-WT-030S-UF-510x510.png" alt="Watek WT-090S-RO">
+        <h4>Watek WT-090S-RO</h4>
+        <p class="price">Giá gốc: 8.490.000đ</p>
+        <span class="buy-btn">Xem chi tiết</span>
+      </a>
+      <a href="product-detail-8.html" class="product-card">
+        <span class="badge badge-new">Mới</span>
+        <img src="ANHSP/BTH-101T-510x510 (1).jpg" alt="Biontech BTH-120T">
+        <h4>Biontech BTH-120T</h4>
+        <p class="price">Giá gốc: 24.990.000đ</p>
+        <span class="buy-btn">Xem chi tiết</span>
+      </a>
+      <a href="product-detail-9.html" class="product-card">
+        <span class="badge badge-best">Bán chạy</span>
+        <img src="ANHSP/BTM-505N-510x510.jpg" alt="Biontech BTM-505 Premium">
+        <h4>Biontech BTM-505 Premium</h4>
+        <p class="price">Giá gốc: 26.990.000đ</p>
+        <span class="buy-btn">Xem chi tiết</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="qr-code-container">
+  <a href="tel:0942853326" class="call-now-toggle"><i class="fas fa-phone"></i><span>Gọi ngay</span></a>
+  <div class="qr-code-toggle" onclick="toggleQRCode()"><i class="fas fa-qrcode"></i><span>QR</span></div>
+  <div class="qr-code-content"><img src="ANHSP/qrcode.png" alt="QR"><p>Quét mã Zalo</p></div>
+</div>
+
+<footer>
+  <div class="container">
+    <!-- ...existing unified footer like index.html... -->
+    <div class="footer-bottom"><p>Bản quyền © 2025 Tuyến Droppii. Tất cả quyền được bảo lưu.</p></div>
+  </div>
+</footer>
+<script src="common.js"></script>
+</body>
+</html>

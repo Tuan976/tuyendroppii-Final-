@@ -1,0 +1,23 @@
+[07-Aug-2025 10:55:54 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/nhtuyr67/public_html/send_message.php on line 5
+[07-Aug-2025 10:55:54 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/nhtuyr67/public_html/send_message.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/nhtuyr67/public_html/send_message.php on line 5
+[07-Aug-2025 10:59:44 UTC] PHP Parse error:  Unclosed '{' on line 878 in /home/nhtuyr67/public_html/index.php on line 886
+[07-Aug-2025 10:59:44 UTC] PHP Parse error:  Unclosed '{' on line 878 in /home/nhtuyr67/public_html/index.php on line 886
+[07-Aug-2025 10:59:46 UTC] PHP Parse error:  Unclosed '{' on line 878 in /home/nhtuyr67/public_html/index.php on line 886
+[07-Aug-2025 10:59:47 UTC] PHP Parse error:  Unclosed '{' on line 878 in /home/nhtuyr67/public_html/index.php on line 886
+[07-Aug-2025 10:59:47 UTC] PHP Parse error:  Unclosed '{' on line 878 in /home/nhtuyr67/public_html/index.php on line 886
+[07-Aug-2025 10:59:47 UTC] PHP Parse error:  Unclosed '{' on line 878 in /home/nhtuyr67/public_html/index.php on line 886
+[07-Aug-2025 10:59:47 UTC] PHP Parse error:  Unclosed '{' on line 878 in /home/nhtuyr67/public_html/index.php on line 886
+[07-Aug-2025 10:59:47 UTC] PHP Parse error:  Unclosed '{' on line 878 in /home/nhtuyr67/public_html/index.php on line 886
+[07-Aug-2025 11:00:14 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/nhtuyr67/public_html/send_message.php on line 5
+[07-Aug-2025 11:00:14 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/nhtuyr67/public_html/send_message.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/nhtuyr67/public_html/send_message.php on line 5
+[07-Aug-2025 11:01:31 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/nhtuyr67/public_html/send_message.php on line 4
+[07-Aug-2025 11:01:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/nhtuyr67/public_html/send_message.php:1) in /home/nhtuyr67/public_html/send_message.php on line 5
+[07-Aug-2025 11:01:31 UTC] PHP Warning:  Undefined global variable $_SESSION in /home/nhtuyr67/public_html/send_message.php on line 10
+[07-Aug-2025 11:01:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/nhtuyr67/public_html/send_message.php on line 10
+[07-Aug-2025 11:01:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/nhtuyr67/public_html/send_message.php:1) in /home/nhtuyr67/public_html/send_message.php on line 11

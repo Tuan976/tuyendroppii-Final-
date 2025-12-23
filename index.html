@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUYẾN DROPPII</title>
+    <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 400px;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-nav button {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: background 0.3s ease;
+        }
+
+        .slider-nav button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s ease, background 0.3s ease;
+        }
+
+        .dot.active {
+            opacity: 1;
+            background: #0077c2;
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .navbar .logo {
+            color: #0077c2;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .logo:hover {
+            color: #005f99;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-nav li {
+            margin-left: 20px;
+        }
+
+        .navbar-nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 6px 10px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .navbar-nav a:hover {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .navbar-btn {
+            background-color: #000;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-btn:hover {
+            background-color: #333;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer;
+        }
+
+                /* Best Sellers Section */
+                .best-sellers-section { padding: 70px 0; background: linear-gradient(135deg, #fff 0%, #f7fafc 100%); box-shadow: 0 15px 50px rgba(0,0,0,0.1); overflow: hidden; border-radius: 20px; margin: 20px; border: 2px solid #e2e8f0; }
+        .best-sellers-title { text-align: center; font-size: 2.8em; font-weight: 900; margin-bottom: 50px; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; }
+        .best-sellers-title::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 100px; height: 5px; background: linear-gradient(135deg, #0077c2, #005a9e); border-radius: 3px; }
+        /* Certificate Section */
+        .certificate-section { padding: 70px 0; background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%); box-shadow: 0 15px 50px rgba(0,0,0,0.1); overflow: hidden; border-radius: 20px; margin: 20px; border: 2px solid #e2e8f0; }
+        .certificate-title { text-align: center; font-size: 2.8em; font-weight: 900; margin-bottom: 50px; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; }
+        .certificate-title::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 100px; height: 5px; background: linear-gradient(135deg, #0077c2, #005a9e); border-radius: 3px; }
+        .product-slider-wrapper {position: relative;max-width: 100%;margin: 0 auto;overflow: visible;padding: 0; }
+        .product-slider, .certificate-slider {display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 25px;transition: transform 0.5s ease;cursor: default;overflow: visible;-webkit-overflow-scrolling: auto;scrollbar-width: auto;}
+        .product-card { width: 100%; background: linear-gradient(135deg, #fff 0%, #f7fafc 100%); border: 2px solid #e2e8f0; border-radius: 15px; box-shadow: 0 12px 35px rgba(0,0,0,0.08); text-align: center; padding: 25px; transition: all 0.3s ease; text-decoration: none; color: #1a202c; position: relative; overflow: hidden; }
+        .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #0077c2, #005a9e); transform: scaleX(0); transition: transform 0.3s ease; }
+        .product-card:hover::before { transform: scaleX(1); }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0, 119, 194, 0.15); border-color: #0077c2; }
+        .product-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; transition: transform 0.4s ease; }
+        .product-card:hover img { transform: scale(1.05); }
+        .product-card h4 { font-size: 1.2em; font-weight: 700; margin-bottom: 15px; color: #2c3e50; line-height: 1.4; }
+        .product-card p.price { font-size: 1.4em; color: #e74c3c; font-weight: 800; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(231, 76, 60, 0.2); }
+        .product-card .buy-btn { display: inline-block; background: linear-gradient(135deg, #3498db, #9b59b6); color: #fff; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3); }
+        .product-card .buy-btn:hover { background: linear-gradient(135deg, #2980b9, #8e44ad); transform: translateY(-2px); box-shadow: 0 12px 35px rgba(52, 152, 219, 0.4); }
+        /* Certificate Card Specific Styling */
+        .certificate-slider .product-card {width: 100%;background: #fff;border: 2px solid #0077c2;border-radius: 15px;padding: 30px;position: relative;overflow: hidden;}
+        .certificate-slider .product-card::before {content: '\f559';font-family: 'Font Awesome 6 Free';font-weight: 900;position: absolute;top: 10px;right: 10px;font-size: 2em;color: #0077c2;opacity: 0.2;}
+        .certificate-slider .product-card img {height: 280px;object-fit: contain;border: 1px solid #ddd;background: #f5f5f5;}
+        .certificate-slider .product-card h4 {font-size: 1.4em;font-weight: 700;color: #333;margin-bottom: 20px;text-transform: uppercase;}
+        .slider-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 20px; z-index: 10; }
+        .slider-nav button { background: rgba(0, 0, 0, 0.6); color: #fff; border: none; padding: 12px 16px; cursor: pointer; font-size: 1.4em; border-radius: 50%; transition: background 0.3s ease; z-index: 20; }
+        .slider-nav button:hover { background: rgba(0, 0, 0, 0.8); }
+        .slider-nav button:active { transform: scale(0.95); }
+        .slider-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10; }
+        .dot { width: 12px; height: 12px; background: rgba(255, 255, 255, 0.5); border-radius: 50%; cursor: pointer; transition: background 0.3s ease; }
+        .dot.active { background: #fff; }
+        .slider-arrow {position: absolute;top: 50%;transform: translateY(-50%);background: rgba(0, 0, 0, 0.5);color: #fff;border: none;padding: 10px;cursor: pointer;font-size: 1.5em;z-index: 10;border-radius: 50%;transition: background 0.3s ease;}
+        .slider-arrow.left {left: 5px;}
+        .slider-arrow.right {right: 5px;}
+        .slider-arrow:hover {background: rgba(0, 0, 0, 0.8);}
+        /* Why Choose Section */
+        .why-choose-section { padding: 100px 0; text-align: center; background: linear-gradient(135deg, #0077c2 0%, #005a9e 100%); color: #fff; position: relative; overflow: hidden; }
+        .why-choose-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); opacity: 0.4; }
+        .why-choose-section h2 { font-size: 3.2em; font-weight: 900; color: #fff; margin-bottom: 70px; position: relative; display: inline-block; text-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        .why-choose-section h2::before, .why-choose-section h2::after { content: ''; position: absolute; height: 4px; width: 100px; background: linear-gradient(90deg, transparent, #e2e8f0, transparent); top: 50%; }
+        .why-choose-section h2::before { left: -120px; }
+        .why-choose-section h2::after { right: -120px; }
+        .why-choose-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; padding-bottom: 40px; position: relative; z-index: 1; }
+        .why-choose-card { background: rgba(255,255,255,0.98); padding: 35px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); transition: all 0.3s ease; text-align: center; border: 2px solid #e2e8f0; }
+        .why-choose-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0, 119, 194, 0.25); border-color: #0077c2; }
+        .why-choose-card i { font-size: 3.5em; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 25px; transition: transform 0.3s ease; }
+        .why-choose-card:hover i { transform: scale(1.1); }
+        .why-choose-card h3 { font-size: 1.9em; font-weight: 800; margin-bottom: 20px; color: #1a202c; }
+        .why-choose-card p { font-size: 1.1em; color: #4a5568; line-height: 1.7; }
+        /* Warranty Process Section */
+        .warranty-process-section { padding: 100px 0; text-align: center; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); position: relative; overflow: hidden; }
+        .warranty-process-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 100%; background: linear-gradient(45deg, transparent 30%, rgba(52, 152, 219, 0.03) 50%, transparent 70%); animation: shimmer 3s infinite; }
+        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        .warranty-process-section h2 { font-size: 3em; font-weight: 800; margin-bottom: 30px; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 4px 20px rgba(0, 119, 194, 0.2); }
+        .warranty-process-section .section-subtitle { font-size: 1.3em; max-width: 900px; margin: 0 auto 60px; color: #555; line-height: 1.8; font-weight: 400; }
+        .warranty-process-content { display: flex; align-items: center; text-align: left; gap: 60px; position: relative; z-index: 1; }
+        .warranty-process-content .video-wrapper { flex: 1; padding-right: 30px; }
+        .warranty-process-content .video-wrapper video { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); transition: transform 0.4s ease; }
+        .warranty-process-content .video-wrapper video:hover { transform: scale(1.02); }
+        .warranty-process-content .text-wrapper { flex: 1; padding-left: 30px; }
+        .warranty-process-content h3 { font-size: 2.5em; font-weight: 800; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 25px; }
+        .warranty-process-content p { font-size: 1.2em; color: #555; margin-bottom: 20px; line-height: 1.8; }
+        .warranty-process-content .process-step { display: flex; align-items: flex-start; margin-bottom: 25px; padding: 20px; background: rgba(255,255,255,0.8); border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+        .warranty-process-content .process-step:hover { transform: translateX(10px); background: rgba(255,255,255,0.95); }
+        .warranty-process-content .process-step i { font-size: 2em; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-right: 20px; margin-top: 5px; }
+        .difference-section { padding: 100px 0; text-align: center; background: linear-gradient(135deg, #0077c2 0%, #005a9e 100%); color: #fff; position: relative; overflow: hidden; }
+        .difference-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>'); opacity: 0.2; }
+        .difference-section h2 { font-size: 3em; font-weight: 800; color: #fff; margin-bottom: 30px; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .difference-section .section-subtitle { font-size: 1.3em; max-width: 900px; margin: 0 auto 60px; color: rgba(255,255,255,0.9); line-height: 1.8; font-weight: 400; }
+        .difference-content { display: flex; align-items: center; text-align: left; gap: 60px; position: relative; z-index: 1; }
+        .difference-content .image-wrapper { flex: 1; padding-right: 30px; }
+        .difference-content .image-wrapper img { width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.2); transition: transform 0.4s ease; }
+        .difference-content .image-wrapper img:hover { transform: scale(1.05) rotate(2deg); }
+        .difference-content .text-wrapper { flex: 1; padding-left: 30px; }
+        .difference-content h3 { font-size: 2.5em; font-weight: 800; color: #fff; margin-bottom: 25px; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .difference-content p { font-size: 1.2em; color: rgba(255,255,255,0.9); margin-bottom: 25px; line-height: 1.8; }
+        .difference-content a.learn-more { color: #fff; text-decoration: none; font-weight: 600; transition: all 0.3s ease; padding: 12px 25px; background: rgba(255,255,255,0.2); border-radius: 25px; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3); }
+        .difference-content a.learn-more:hover { background: rgba(255,255,255,0.3); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .contact-form-section { padding: 100px 0; text-align: center; background: linear-gradient(135deg, #0077c2 0%, #005a9e 100%); color: #fff; position: relative; overflow: hidden; }
+        .contact-form-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="waves" width="100" height="20" patternUnits="userSpaceOnUse"><path d="M0,10 Q25,5 50,10 T100,10" stroke="rgba(255,255,255,0.1)" fill="none" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23waves)"/></svg>'); opacity: 0.3; }
+        .contact-form-section h2 { font-size: 3em; font-weight: 800; color: #fff; margin-bottom: 60px; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .contact-form-section .form-container { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.95); padding: 50px; border-radius: 25px; box-shadow: 0 25px 60px rgba(0,0,0,0.2); text-align: left; backdrop-filter: blur(20px); border: 2px solid rgba(255,255,255,0.3); position: relative; z-index: 1; }
+        .contact-form-section .form-group { margin-bottom: 25px; }
+        .contact-form-section label { display: block; margin-bottom: 10px; font-weight: 600; color: #2c3e50; font-size: 1.1em; }
+        .contact-form-section input[type="text"], .contact-form-section input[type="email"], .contact-form-section textarea { width: 100%; padding: 15px 20px; border: 2px solid rgba(0, 119, 194, 0.3); border-radius: 15px; font-size: 1.1em; background-color: rgba(255,255,255,0.9); transition: all 0.3s ease; }
+        .contact-form-section input[type="text"]:focus, .contact-form-section input[type="email"]:focus, .contact-form-section textarea:focus { outline: none; border-color: #0077c2; background-color: #fff; box-shadow: 0 0 20px rgba(0, 119, 194, 0.3); transform: translateY(-2px); }
+        .contact-form-section textarea { resize: vertical; min-height: 140px; }
+        .contact-form-section button { background: linear-gradient(135deg, #0077c2, #005a9e); color: #fff; padding: 15px 35px; border: none; border-radius: 30px; font-size: 1.2em; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0, 119, 194, 0.3); }
+        .contact-form-section button:hover { background: linear-gradient(135deg, #005a9e, #004080); transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0, 119, 194, 0.4); }
+        /* QR Code Section */
+        .qr-code-container { position: fixed; bottom: 30px; right: 30px; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .call-now-toggle { background: linear-gradient(135deg, #ff6b35, #ff8e53, #ff6b35); background-size: 200% 200%; color: #fff; width: 70px; height: 70px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6), 0 0 30px rgba(255, 107, 53, 0.4); transition: all 0.4s ease; animation: pulse 2s infinite, gradientMove 3s ease-in-out infinite; font-size: 0.9em; font-weight: 700; text-align: center; text-decoration: none; padding: 8px; border: 3px solid rgba(255,255,255,0.8); position: relative; overflow: hidden; }
+        .call-now-toggle::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%); animation: shimmer 2s infinite; }
+        .call-now-toggle:hover { background: linear-gradient(135deg, #ff5722, #ff6b35, #ff5722); background-size: 200% 200%; transform: scale(1.3) rotate(8deg); box-shadow: 0 20px 50px rgba(255, 107, 53, 0.8), 0 0 40px rgba(255, 107, 53, 0.6); border-color: #fff; animation: pulse 1s infinite; }
+        .call-now-toggle i { font-size: 1.5em; margin-bottom: 5px; }
+        .call-now-toggle span { font-size: 0.8em; line-height: 1.2; }
+        .qr-code-toggle { background: linear-gradient(135deg, #9c27b0, #e91e63, #9c27b0); background-size: 200% 200%; color: #fff; width: 90px; height: 90px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 15px 40px rgba(156, 39, 176, 0.6), 0 0 30px rgba(156, 39, 176, 0.4); transition: all 0.4s ease; animation: pulse 2s infinite, gradientMove 3s ease-in-out infinite; font-size: 1em; font-weight: 700; text-align: center; padding: 10px; border: 3px solid rgba(255,255,255,0.8); position: relative; overflow: hidden; }
+        .qr-code-toggle::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%); animation: shimmer 2s infinite; }
+        .qr-code-toggle:hover { background: linear-gradient(135deg, #7b1fa2, #9c27b0, #7b1fa2); background-size: 200% 200%; transform: scale(1.3) rotate(-8deg); box-shadow: 0 20px 50px rgba(156, 39, 176, 0.8), 0 0 40px rgba(156, 39, 176, 0.6); border-color: #fff; animation: pulse 1s infinite; }
+        .qr-code-toggle i { font-size: 1.8em; margin-bottom: 8px; }
+        .qr-code-toggle span { font-size: 0.9em; line-height: 1.2; }
+        .qr-code-content {display: none;position: absolute;bottom: 160px;right: 0;background: #fff;padding: 20px;border-radius: 10px;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);text-align: center;width: 250px;transition: opacity 0.3s ease, transform 0.3s ease;opacity: 0;transform: translateY(10px);border: 2px solid #e60023;}
+        .qr-code-container.active .qr-code-content {display: block;opacity: 1;transform: translateY(0);}
+        .qr-code-content img {width: 150px;height: 150px;margin-bottom: 15px;border: 1px solid #ddd;border-radius: 5px;}
+        .qr-code-content p {font-size: 1em;color: #333;font-weight: 500;}
+        /* Hiệu ứng pulse để làm nổi bật */
+        @keyframes pulse {
+            0% {transform: scale(1);box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);}
+            50% {transform: scale(1.05);box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);}
+            100% {transform: scale(1);box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);}
+        }
+        @keyframes gradientMove {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        @keyframes shimmer {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.95em;
+            position: relative;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+
+        footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        footer .footer-section h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #fff;
+            position: relative;
+        }
+
+        footer .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #fff;
+            opacity: 0.8;
+        }
+
+        footer .footer-section p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            font-weight: 300;
+        }
+
+        footer .footer-section a {
+            color: #e6f0fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-section a:hover {
+            color: #fff;
+        }
+
+        footer .footer-section p i {
+            font-size: 1.4em;
+            margin-right: 12px;
+            color: #e6f0fa;
+            transition: transform 0.3s ease;
+        }
+
+        footer .footer-section p i:hover {
+            transform: scale(1.2);
+        }
+
+        footer .map-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+        }
+
+        footer .map-container:hover {
+            transform: scale(1.03);
+        }
+
+        footer .map-container iframe {
+            width: 100%;
+            height: 220px;
+            border: 0;
+            display: block;
+        }
+
+        footer .social-links {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 2em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #e6f0fa;
+            transform: scale(1.2);
+        }
+
+        footer .footer-bottom {
+            margin-top: 20px;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-wrap: wrap;
+            }
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                background-color: #fff;
+            }
+            .navbar-nav.active {
+                display: flex;
+            }
+            .navbar-nav li {
+                margin: 8px 0;
+                text-align: center;
+            }
+            .navbar-btn {
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+            .hamburger {
+                display: block;
+            }
+            .why-choose-section h2::before,
+            .why-choose-section h2::after {
+                width: 30px;
+                left: -40px;
+                right: -40px;
+            }
+            .warranty-process-content,
+            .difference-content {
+                flex-direction: column;
+            }
+            .warranty-process-content .video-wrapper,
+            .warranty-process-content .text-wrapper,
+            .difference-content .image-wrapper,
+            .difference-content .text-wrapper {
+                padding: 0;
+            }
+            footer .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            footer .footer-section {
+                text-align: center;
+            }
+            footer .footer-section p {
+                justify-content: center;
+            }
+            footer .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            footer .map-container iframe {
+                height: 200px;
+            }
+            .slider-container {
+                height: 250px;
+            }
+            .slide {
+                height: 250px;
+            }
+            .slide-caption {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .slider-nav button {
+                font-size: 1.2em;
+                padding: 8px;
+            }
+            .dot {
+                width: 8px;
+                height: 8px;
+            }
+            .product-card {
+                min-width: 200px;
+            }
+            .certificate-slider .product-card {
+                min-width: 250px;
+                padding: 15px;
+            }
+            .certificate-slider .product-card img {
+                height: 180px;
+            }
+            .certificate-slider .product-card h4 {
+                font-size: 1em;
+            }
+            .product-slider-wrapper {
+                padding: 0 10px;
+            }
+            .slider-arrow {
+                display: none;
+            }
+            .call-now-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 0.7em;
+            }
+            .call-now-toggle i {
+                font-size: 1.1em;
+                margin-bottom: 2px;
+            }
+            .call-now-toggle span {
+                font-size: 0.65em;
+            }
+            .qr-code-toggle {
+                width: 60px;
+                height: 60px;
+                font-size: 0.7em;
+            }
+            .qr-code-toggle i {
+                font-size: 1.2em;
+                margin-bottom: 3px;
+            }
+            .qr-code-toggle span {
+                font-size: 0.65em;
+            }
+            .qr-code-content {
+                width: 200px;
+                padding: 15px;
+                bottom: 130px;
+            }
+            .qr-code-content img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="ANHSP/BIA/b1.jpg" alt="Sản phẩm máy lọc nước ion kiềm">
+                <div class="slide-caption">Khám phá công nghệ lọc nước tiên tiến</div>
+            </div>
+            <div class="slide">
+                <img src="ANHSP/BIA/b2.jpg" alt="Nước ion kiềm tốt cho sức khỏe">
+                <div class="slide-caption">Nâng cao sức khỏe với nước ion kiềm</div>
+            </div>
+            <div class="slide">
+                <img src="ANHSP/BIA/b3.jpg" alt="Tuyến Droppii chất lượng">
+                <div class="slide-caption">Tuyến Droppii - Đồng hành cùng sức khỏe</div>
+            </div>
+            <div class="slide">
+                <img src="ANHSP/BIA/b4.jpg" alt="Tuyến Droppii chất lượng">
+                <div class="slide-caption">Tuyến Droppii - Đồng hành cùng sức khỏe</div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <button onclick="prevSlide()">❮</button>
+            <button onclick="nextSlide()">❯</button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tuyến Droppi</a>
+            <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+            <ul class="navbar-nav">
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="products.html">TGNL</a></li>
+                <li><a href="index.html#technology">Công nghệ</a></li>
+                <li><a href="khachhang.html">Khách hàng</a></li>
+                <li><a href="kuchen.html">Kuchen</a></li>
+                <li><a href="trungbay.html">Ionpia</a></li>
+                <li><a href="baohanh.html">Bảo hành</a></li>
+                <li><a href="kienthuc.html">Sống Khỏe</a></li>
+                <li><a href="index.html#contact">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="best-sellers-section">
+        <div class="container">
+            <h2 class="best-sellers-title">Sản Phẩm Bán Chạy</h2>
+            <div class="product-slider-wrapper">
+                <div class="product-slider" id="productSlider">
+                    <a href="product-detail-1.html" class="product-card">
+                        <img src="ANHSP/BTH-101T-510x510 (1).jpg" alt="Máy Lọc Nước Ion Kiềm Biontech BTH-101T">
+                        <h4>Máy Lọc Nước Ion Kiềm Biontech BTH-101T</h4>
+                    </a>
+                    <a href="product-detail-2.html" class="product-card">
+                        <img src="ANHSP/BTM-505N-510x510.jpg" alt="Máy tạo nước Pi Biontech BTM-505N">
+                        <h4>Máy tạo nước Pi Biontech BTM-505N</h4>
+                    </a>
+                    <a href="product-detail-3.html" class="product-card">
+                        <img src="ANHSP/Watek-nóng-lạnh-WT-030S-UF-510x510.png" alt="Máy lọc nước nóng lạnh RO Watek, Model: WT-030S-RO">
+                        <h4>Máy lọc nước nóng lạnh RO Watek, Model: WT-030S-RO</h4>
+                    </a>
+                    <a href="product-detail-4.html" class="product-card">
+                        <img src="ANHSP/s3.jpg" alt="Nồi chiên không dầu Kuchen 1119 12 lít 1800W công nghệ Đức">
+                        <h4>Nồi chiên không dầu Kuchen 1119 12 lít 1800W công nghệ Đức</h4>
+                    </a>
+                    <a href="product-detail-5.html" class="product-card">
+                        <img src="ANHSP/s4.jpg" alt="Máy sấy lạnh quần áo HeatPump KU DKD 81118">
+                        <h4>Máy sấy lạnh quần áo HeatPump KU DKD 81118</h4>
+                    </a>
+                    <a href="product-detail-6.html" class="product-card">
+                        <img src="ANHSP/mxt.jpg" alt="Máy xay thực phẩm đa năng KU DKFC1212">
+                        <h4>Máy xay thực phẩm đa năng KU DKFC1212</h4>
+                    </a>
+                    <a href="product-detail-7.html" class="product-card">
+                        <img src="ANHSP/h1.jpg" alt="Máy lọc nước ion kiềm ION-6200">
+                        <h4>Máy lọc nước ion kiềm ION-6200</h4>
+                    </a>
+                    <a href="product-detail-8.html" class="product-card">
+                        <img src="ANHSP/h2.jpg" alt="Máy lọc nước ion kiềm IONPIA 5100">
+                        <h4>Máy lọc nước ion kiềm IONPIA 5100</h4>
+                    </a>
+                </div>
+                <button class="slider-arrow left" onclick="scrollProductSlider('productSlider', -1)">❮</button>
+                <button class="slider-arrow right" onclick="scrollProductSlider('productSlider', 1)">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="certificate-section">
+        <div class="container">
+            <h2 class="certificate-title">Giấy Chứng Nhận</h2>
+            <div class="product-slider-wrapper">
+                <div class="certificate-slider" id="certificateSlider">
+                    <a href="#" class="product-card">
+                        <img src="ANHSP/s5.jpg" alt="Biontech">
+                        <h4>GIẤY CHỨNG NHẬN VỀ BIONTECH</h4>
+                    </a>
+                    <a href="#" class="product-card">
+                        <img src="ANHSP/s6.jpeg" alt="KUCHEN">
+                        <h4>GIẤY CHỨNG NHẬN VỀ KUCHEN</h4>
+                    </a>
+                    <a href="#" class="product-card">
+                        <img src="ANHSP/s7.jpg" alt="IONPIA">
+                        <h4>GIẤY CHỨNG NHẬN VỀ IONPIA</h4>
+                    </a>
+                </div>
+                <button class="slider-arrow left" onclick="scrollProductSlider('certificateSlider', -1)">❮</button>
+                <button class="slider-arrow right" onclick="scrollProductSlider('certificateSlider', 1)">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-section">
+        <div class="container">
+            <h2>Tại Sao Chọn Tuyến Droppii</h2>
+            <div class="why-choose-grid">
+                <div class="why-choose-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Công Nghệ Tiên Tiến</h3>
+                    <p>Ứng dụng công nghệ lọc nước ion kiềm hiện đại, đảm bảo chất lượng nước vượt trội cho sức khỏe.</p>
+                </div>
+                <div class="why-choose-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Lợi Ích Sức Khỏe</h3>
+                    <p>Nước ion kiềm giàu hydrogen giúp chống oxy hóa, hỗ trợ tiêu hóa và tăng cường năng lượng.</p>
+                </div>
+                <div class="why-choose-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Chất Lượng Đảm Bảo</h3>
+                    <p>Sản phẩm được chứng nhận bởi các tổ chức uy tín, mang lại sự an tâm cho khách hàng.</p>
+                </div>
+                <div class="why-choose-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Hỗ Trợ Tận Tâm</h3>
+                    <p>Đội ngũ tư vấn chuyên nghiệp, sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="warranty-process-section">
+        <div class="container">
+            <h2>Quy Trình Bảo Hành Tại Nhà</h2>
+            <p class="section-subtitle">Chúng tôi cung cấp dịch vụ bảo hành tại nhà chuyên nghiệp, đảm bảo thiết bị của bạn hoạt động tối ưu với quy trình rõ ràng và hiệu quả.</p>
+            <div class="warranty-process-content">
+                <div class="video-wrapper">
+                    <video controls poster="ANHSP/warranty-poster.jpg">
+                        <source src="ANHSP/0814.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ video.
+                    </video>
+                </div>
+                <div class="text-wrapper">
+                    <h3>Quy Trình Bảo Hành Chuyên Nghiệp</h3>
+                    <div class="process-step">
+                        <i class="fas fa-search"></i>
+                        <p><strong>Kiểm Tra Khảo Sát:</strong> Kỹ thuật viên kiểm tra tình trạng máy và xác định vấn đề cần bảo hành.</p>
+                    </div>
+                    <div class="process-step">
+                        <i class="fas fa-tint-slash"></i>
+                        <p><strong>Ngắt Đóng Nguồn Nước:</strong> Tắt các nguồn nước không cần thiết để đảm bảo an toàn trong quá trình bảo hành.</p>
+                    </div>
+                    <div class="process-step">
+                        <i class="fas fa-trash-alt"></i>
+                        <p><strong>Tháo Lõi Lọc Cũ:</strong> Tháo bỏ các lõi lọc đã hết hạn sử dụng hoặc hư hỏng một cách cẩn thận.</p>
+                    </div>
+                    <div class="process-step">
+                        <i class="fas fa-sync-alt"></i>
+                        <p><strong>Thay Lõi Lọc Mới:</strong> Lắp đặt lõi lọc mới chính hãng, đảm bảo chất lượng nước đạt tiêu chuẩn.</p>
+                    </div>
+                    <div class="process-step">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Kiểm Tra & Bàn Giao:</strong> Kiểm tra hoạt động của máy sau bảo hành và bàn giao cho khách hàng với hướng dẫn sử dụng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="difference" class="difference-section">
+        <div class="container">
+            <h2>Sự Khác Biệt Của Nước Điện Giải</h2>
+            <p class="section-subtitle">Nước điện giải ion kiềm từ Tuyến Droppii không chỉ là nước uống thông thường mà là một giải pháp sức khỏe toàn diện. Với công nghệ tiên tiến, nước ion kiềm mang lại những lợi ích vượt trội, giúp cải thiện sức khỏe và nâng cao chất lượng cuộc sống.</p>
+            <div class="difference-content">
+                <div class="image-wrapper">
+                    <img src="ANHSP/m1.jpg" alt="Nước điện giải">
+                </div>
+                <div class="text-wrapper">
+                    <h3>Nước Hydrogen Và Tác Dụng Có Thể Bạn Chưa Biết</h3>
+                    <p>Nước hydrogen, một sản phẩm của quá trình điện giải, chứa các phân tử hydrogen hoạt tính có khả năng chống oxy hóa mạnh mẽ. Hydrogen giúp giảm thiểu tác hại của các gốc tự do, hỗ trợ cải thiện sức khỏe tim mạch, tăng cường hệ miễn dịch và làm chậm quá trình lão hóa.</p>
+                    <p>Ngoài ra, nước hydrogen còn giúp cải thiện tiêu hóa, tăng cường năng lượng và hỗ trợ cơ thể thải độc hiệu quả hơn.</p>
+                    <a href="TimHieuThem.html" class="learn-more">Tìm hiểu thêm →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-form-section">
+        <div class="container">
+            <h2>Liên Hệ Với Tuyến Droppi</h2>
+            <p style="margin-bottom: 30px;">Bạn có bất kỳ câu hỏi nào? Đừng ngần ngại liên hệ với chúng tôi để được tư vấn chi tiết!</p>
+            <div class="form-container">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Họ và tên:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Tiêu đề:</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nội dung tin nhắn:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Gửi tin nhắn</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="qr-code-container">
+        <a href="tel:[0913676389]" class="call-now-toggle">
+            <i class="fas fa-phone"></i>
+            <span>Gọi ngay</span>
+        </a>
+        <div class="qr-code-toggle" onclick="toggleQRCode()">
+            <i class="fas fa-comment-dots"></i>
+            <span>Quét QR ngay</span>
+        </div>
+        <div class="qr-code-content">
+            <img src="ANHSP/qrcode.png" alt="QR Code">
+            <p>Quét mã QR để tận hưởng mua sắm cùng Tuyến Droppii</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sản phẩm</h3>
+                    <ul>
+                        <li><a href="#">Máy lọc nước ion kiềm</a></li>
+                        <li><a href="#">Bộ lọc thay thế</a></li>
+                        <li><a href="#">Phụ kiện</a></li>
+                        <li><a href="#">Hướng dẫn sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hỗ trợ</h3>
+                    <ul>
+                        <li><a href="baohanh.html">Chính sách bảo hành</a></li>
+                        <li><a href="muahang.html">Hướng dẫn mua hàng</a></li>
+                        <li><a href="thanhtoan.html">Phương thức thanh toán</a></li>
+                        <li><a href="cauhoi">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-map-marked-alt"></i> 315/9 Kha Vạn Cân, Phường Hiệp Bình Chánh, Quận Thủ Đức, TP.HCM</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:hatien7171@gmail.com">hatien7171@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:0942853326">094 285 3326</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Bản đồ</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8025975232003!2d106.7120874!3d10.8264136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f294a19919%3A0xd3ebec144576d4ce!2zxJBp4buHbiBM4bqhbmggSHV5IEhvw6BuZw!5e0!3m2!1svi!2s!4v1754197601066!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/quanghatuyen6789"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/hoanghuy04081971/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>Bản quyền © 2025 TuyenDroppii. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+
+        function toggleQRCode() {
+            const qrContainer = document.querySelector('.qr-code-container');
+            qrContainer.classList.toggle('active');
+        }
+
+        // Main Slider Script
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+                dots[index].classList.remove('active');
+            });
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+                dots[index].classList.remove('active');
+            });
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+                dots[index].classList.remove('active');
+            });
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
+
+        function currentSlide(index) {
+            slideIndex = index;
+            slides.forEach((slide, i) => {
+                slide.style.display = 'none';
+                dots[i].classList.remove('active');
+            });
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
+
+        slides[slideIndex].style.display = 'block';
+        dots[slideIndex].classList.add('active');
+        setInterval(showSlides, 5000);
+
+        // Product and Certificate Slider Script
+        function initSlider(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const productCards = slider.querySelectorAll('.product-card');
+            const totalCards = productCards.length;
+            const cardWidth = productCards[0].offsetWidth + 20;
+            let currentScroll = 0;
+
+            const scrollProductSlider = (direction) => {
+                if (direction === 1) {
+                    currentScroll += cardWidth;
+                    if (currentScroll >= slider.scrollWidth - slider.clientWidth) {
+                        currentScroll = slider.scrollWidth - slider.clientWidth;
+                    }
+                } else {
+                    currentScroll -= cardWidth;
+                    if (currentScroll < 0) {
+                        currentScroll = 0;
+                    }
+                }
+                slider.scrollTo({
+                    left: currentScroll,
+                    behavior: 'smooth'
+                });
+            };
+
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startPos = e.pageX - slider.offsetLeft;
+                currentTranslate = slider.scrollLeft;
+                slider.style.cursor = 'grabbing';
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDragging = false;
+                slider.style.cursor = 'grab';
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDragging = false;
+                slider.style.cursor = 'grab';
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startPos) * 1.5;
+                slider.scrollLeft = currentTranslate - walk;
+            });
+
+            slider.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                startPos = e.touches[0].pageX - slider.offsetLeft;
+                currentTranslate = slider.scrollLeft;
+            });
+
+            slider.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startPos) * 1.5;
+                slider.scrollLeft = currentTranslate - walk;
+            });
+
+            return scrollProductSlider;
+        }
+
+        window.scrollProductSlider = function(sliderId, direction) {
+            const scrollFunctions = {
+                'productSlider': initSlider('productSlider'),
+                'certificateSlider': initSlider('certificateSlider')
+            };
+            scrollFunctions[sliderId](direction);
+        };
+
+        window.addEventListener('load', () => {
+            initSlider('productSlider');
+            initSlider('certificateSlider');
+        });
+    </script>
+</body>
+</html>

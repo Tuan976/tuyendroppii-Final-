@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gian Trưng Bày Sản Phẩm INOPIA - TUYẾN DROPPI</title>
+    <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 400px;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-nav button {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: background 0.3s ease;
+        }
+
+        .slider-nav button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s ease, background 0.3s ease;
+        }
+
+        .dot.active {
+            opacity: 1;
+            background: #0077c2;
+        }
+
+        header {
+            background: linear-gradient(135deg, #005f99 0%, #0077c2 100%);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+
+        .header-btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #0077c2;
+            padding: 10px 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .header-btn:hover {
+            background-color: #eee;
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .navbar .logo {
+            color: #0077c2;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .logo:hover {
+            color: #005f99;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-nav li {
+            margin-left: 20px;
+        }
+
+        .navbar-nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 6px 10px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .navbar-nav a:hover {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .navbar-btn {
+            background-color: #000;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-btn:hover {
+            background-color: #333;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        /* Video Section */
+        .video-section { padding: 80px 0; background: linear-gradient(135deg, #fff 0%, #f7fafc 100%); box-shadow: 0 15px 50px rgba(0,0,0,0.1); border-radius: 20px; margin: 20px; border: 2px solid #e2e8f0; }
+        .video-section .container { text-align: left; }
+        .video-intro-container { display: flex; align-items: center; gap: 40px; max-width: 1100px; margin: 0 auto; text-align: left; }
+        .video-container { position: relative; flex: 1; padding-bottom: 35%; height: 0; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 3px solid #e2e8f0; transition: transform 0.3s ease; }
+        .video-container:hover { transform: scale(1.02); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .intro-text { flex: 1; }
+        .intro-text h2 { font-size: 2.5em; font-weight: 700; margin-bottom: 25px; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; }
+        .intro-text h2::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 4px; background: linear-gradient(135deg, #0077c2, #005a9e); border-radius: 2px; }
+        .intro-text p { font-size: 1.1em; color: #4a5568; line-height: 1.8; margin-bottom: 15px; }
+        /* Benefits Section */
+        .benefits-section { padding: 80px 0; background: linear-gradient(135deg, #f7fafc 0%, #fff 100%); box-shadow: 0 15px 50px rgba(0,0,0,0.1); border-radius: 20px; margin: 20px; border: 2px solid #e2e8f0; }
+        .benefits-section .container { text-align: left; }
+        .benefits-container { display: flex; align-items: center; gap: 40px; max-width: 1100px; margin: 0 auto; text-align: left; }
+        .benefits-image { flex: 1; position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 3px solid #e2e8f0; transition: transform 0.3s ease; }
+        .benefits-image:hover { transform: scale(1.02); }
+        .benefits-image img { width: 100%; height: auto; transition: transform 0.3s ease; }
+        .benefits-image:hover img { transform: scale(1.05); }
+        .benefits-text { flex: 1; }
+        .benefits-text h2 { font-size: 2.5em; font-weight: 700; margin-bottom: 25px; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; }
+        .benefits-text h2::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 4px; background: linear-gradient(135deg, #0077c2, #005a9e); border-radius: 2px; }
+        .benefits-text p { font-size: 1.1em; color: #4a5568; line-height: 1.8; margin-bottom: 15px; }
+        .benefits-text ul { list-style: none; margin-left: 0; margin-bottom: 25px; }
+        .benefits-text li { margin-bottom: 12px; padding: 8px 0; padding-left: 25px; position: relative; color: #4a5568; }
+        .benefits-text li::before { content: '✓'; position: absolute; left: 0; color: #0077c2; font-weight: bold; font-size: 1.1em; }
+        /* Showcase Section */
+        .showcase-section { padding: 80px 0; background: linear-gradient(135deg, #fff 0%, #f7fafc 100%); box-shadow: 0 15px 50px rgba(0,0,0,0.1); border-radius: 20px; margin: 20px; border: 2px solid #e2e8f0; }
+        .showcase-section h2 { text-align: center; font-size: 2.8em; font-weight: 900; margin-bottom: 20px; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; }
+        .showcase-section h2::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 100px; height: 5px; background: linear-gradient(135deg, #0077c2, #005a9e); border-radius: 3px; }
+        .showcase-section .subtitle { text-align: center; font-size: 1.2em; color: #4a5568; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .product-card { background: linear-gradient(135deg, #fff 0%, #f7fafc 100%); border: 2px solid #e2e8f0; border-radius: 15px; box-shadow: 0 12px 35px rgba(0,0,0,0.08); text-align: center; padding: 25px; transition: all 0.3s ease; position: relative; overflow: hidden; height: 100%; }
+        .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(135deg, #0077c2, #005a9e); transform: scaleX(0); transition: transform 0.3s ease; }
+        .product-card:hover::before { transform: scaleX(1); }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0, 119, 194, 0.15); border-color: #0077c2; }
+        .product-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; transition: transform 0.4s ease; border: 2px solid #e2e8f0; }
+        .product-card:hover img { transform: scale(1.05); }
+        .product-card h3 { font-size: 1.3em; font-weight: 700; margin-bottom: 15px; color: #2c3e50; line-height: 1.4; }
+        .product-card p { font-size: 1em; color: #4a5568; line-height: 1.6; margin-bottom: 20px; }
+        
+        /* QR Code Section */
+        .qr-code-container { position: fixed; bottom: 30px; right: 30px; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .call-now-toggle { background: linear-gradient(135deg, #ff6b35, #ff8e53, #ff6b35); background-size: 200% 200%; color: #fff; width: 70px; height: 70px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6), 0 0 30px rgba(255, 107, 53, 0.4); transition: all 0.4s ease; animation: pulse 2s infinite, gradientMove 3s ease-in-out infinite; font-size: 0.9em; font-weight: 700; text-align: center; text-decoration: none; padding: 8px; border: 3px solid rgba(255,255,255,0.8); position: relative; overflow: hidden; }
+        .call-now-toggle::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%); animation: shimmer 2s infinite; }
+        .call-now-toggle:hover { background: linear-gradient(135deg, #ff5722, #ff6b35, #ff5722); background-size: 200% 200%; transform: scale(1.3) rotate(8deg); box-shadow: 0 20px 50px rgba(255, 107, 53, 0.8), 0 0 40px rgba(255, 107, 53, 0.6); border-color: #fff; animation: pulse 1s infinite; }
+        .call-now-toggle i { font-size: 1.5em; margin-bottom: 5px; }
+        .call-now-toggle span { font-size: 0.8em; line-height: 1.2; }
+        .qr-code-toggle { background: linear-gradient(135deg, #9c27b0, #e91e63, #9c27b0); background-size: 200% 200%; color: #fff; width: 90px; height: 90px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 15px 40px rgba(156, 39, 176, 0.6), 0 0 30px rgba(156, 39, 176, 0.4); transition: all 0.4s ease; animation: pulse 2s infinite, gradientMove 3s ease-in-out infinite; font-size: 1em; font-weight: 700; text-align: center; padding: 10px; border: 3px solid rgba(255,255,255,0.8); position: relative; overflow: hidden; }
+        .qr-code-toggle::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%); animation: shimmer 2s infinite; }
+        .qr-code-toggle:hover { background: linear-gradient(135deg, #7b1fa2, #9c27b0, #7b1fa2); background-size: 200% 200%; transform: scale(1.3) rotate(-8deg); box-shadow: 0 20px 50px rgba(156, 39, 176, 0.8), 0 0 40px rgba(156, 39, 176, 0.6); border-color: #fff; animation: pulse 1s infinite; }
+        .qr-code-toggle i { font-size: 1.8em; margin-bottom: 8px; }
+        .qr-code-toggle span { font-size: 0.9em; line-height: 1.2; }
+        .qr-code-content { display: none; position: absolute; bottom: 160px; right: 0; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: 250px; transition: opacity 0.3s ease, transform 0.3s ease; opacity: 0; transform: translateY(10px); border: 2px solid #e60023; }
+        .qr-code-container.active .qr-code-content { display: block; opacity: 1; transform: translateY(0); }
+        .qr-code-content img { width: 150px; height: 150px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .qr-code-content p { font-size: 1em; color: #333; font-weight: 500; }
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.95em;
+            position: relative;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        
+        footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        footer .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        footer .footer-section h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #fff;
+            position: relative;
+        }
+        
+        footer .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #fff;
+            opacity: 0.8;
+        }
+        
+        footer .footer-section p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            font-weight: 300;
+        }
+
+        footer .footer-section a {
+            color: #e6f0fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer .footer-section a:hover {
+            color: #fff;
+        }
+        
+        footer .footer-section p i {
+            font-size: 1.4em;
+            margin-right: 12px;
+            color: #e6f0fa;
+            transition: transform 0.3s ease;
+        }
+
+        footer .footer-section p i:hover {
+            transform: scale(1.2);
+        }
+
+        footer .map-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+        }
+
+        footer .map-container:hover {
+            transform: scale(1.03);
+        }
+
+        footer .map-container iframe {
+            width: 100%;
+            height: 220px;
+            border: 0;
+            display: block;
+        }
+
+        footer .social-links {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 2em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #e6f0fa;
+            transform: scale(1.2);
+        }
+
+        footer .footer-bottom {
+            margin-top: 20px;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-wrap: wrap;
+            }
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                background-color: #fff;
+            }
+            .navbar-nav.active {
+                display: flex;
+            }
+            .navbar-nav li {
+                margin: 8px 0;
+                text-align: center;
+            }
+            .navbar-btn {
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+            .hamburger {
+                display: block;
+            }
+            header h1 {
+                font-size: 2.5em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            .showcase-section h2 {
+                font-size: 2.2em;
+            }
+            .showcase-section p.subtitle {
+                font-size: 1.1em;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .video-intro-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .video-container {
+                padding-bottom: 56.25%;
+            }
+            .intro-text h2, .intro-text p {
+                text-align: center;
+            }
+            .benefits-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .benefits-text h2, .benefits-text p {
+                text-align: center;
+            }
+            .benefits-image {
+                margin-bottom: 20px;
+            }
+            footer .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            footer .footer-section {
+                text-align: center;
+            }
+            footer .footer-section p {
+                justify-content: center;
+            }
+            footer .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            footer .map-container iframe {
+                height: 200px;
+            }
+            .slider-container {
+                height: 250px;
+            }
+            .slide {
+                height: 250px;
+            }
+            .slide-caption {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .slider-nav button {
+                font-size: 1.2em;
+                padding: 8px;
+            }
+            .dot {
+                width: 8px;
+                height: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="ANHSP/BIA/b1.jpg" alt="Sản phẩm máy lọc nước ion kiềm">
+                <div class="slide-caption">Khám phá công nghệ lọc nước tiên tiến</div>
+            </div>
+            <div class="slide">
+                <img src="ANHSP/BIA/b2.jpg" alt="Nước ion kiềm tốt cho sức khỏe">
+                <div class="slide-caption">Nâng cao sức khỏe với nước ion kiềm</div>
+            </div>
+            <div class="slide">
+                <img src="ANHSP/BIA/b3.jpg" alt="Tuyến Droppii chất lượng">
+                <div class="slide-caption">Tuyến Droppii - Đồng hành cùng sức khỏe</div>
+            </div>
+            <div class="slide">
+                <img src="ANHSP/BIA/b4.jpg" alt="Tuyến Droppii chất lượng">
+                <div class="slide-caption">Tuyến Droppii - Đồng hành cùng sức khỏe</div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <button onclick="prevSlide()">&#10094;</button>
+            <button onclick="nextSlide()">&#10095;</button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            <h1>Gian Trưng Bày Sản Phẩm INOPIA - TUYẾN DROPPI</h1>
+            <p>Khám phá bộ sưu tập sản phẩm lọc nước tiên tiến từ Tuyến Droppi, mang lại sức khỏe và sự tiện nghi</p>
+            <a href="#products" class="header-btn">Xem Sản Phẩm</a>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tuyến Droppi</a>
+            <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+            <ul class="navbar-nav">
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="products.html">TGLN</a></li>
+                <li><a href="index.html#technology">Công nghệ</a></li>
+                <li><a href="khachhang.html">Khách hàng</a></li>
+                <li><a href="kuchen.html">Kuchen</a></li>
+                <li><a href="trungbay.html">Ionpia</a></li>
+                <li><a href="baohanh.html">Bảo hành</a></li>
+                <li><a href="kienthuc.html">Sống Khỏe</a></li>
+                <li><a href="index.html#contact">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="video-section">
+        <div class="container">
+            <div class="video-intro-container">
+                <div class="video-container">
+                    <iframe src="ANHSP/gt.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="intro-text">
+                    <h2>Giới Thiệu Về Máy Lọc Nước Ion Kiềm IONPIA</h2>
+                    <p>IONPIA là thương hiệu máy lọc nước ion kiềm Hydrogen hàng đầu từ Hàn Quốc, được thành lập từ năm 1999. Với hơn 20 năm kinh nghiệm và được chứng nhận thiết bị y tế từ Bộ Y Tế Hàn Quốc, IONPIA mang đến giải pháp chăm sóc sức khỏe toàn diện cho gia đình bạn.</p>
+                    <p>Các sản phẩm của IONPIA được trang bị công nghệ tiên tiến với các tấm điện cực chất lượng cao, có khả năng tạo ra đến 7 loại nước khác nhau với các mức độ pH phù hợp cho nhiều mục đích sử dụng, từ uống trực tiếp, pha sữa, nấu ăn đến chăm sóc da mặt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-container">
+                <div class="benefits-image">
+                    <img src="ANHSP/IONPIA/i111.jpg" alt="Công dụng IONPIA">
+                </div>
+                <div class="benefits-text">
+                    <h2>Tổng Quan Công Dụng</h2>
+                    <p>Máy lọc nước ion kiềm IONPIA mang lại nhiều lợi ích sức khỏe vượt trội, bao gồm:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px; color: #555;">
+                        <li>Cải thiện quá trình trao đổi chất và tăng cường năng lượng.</li>
+                        <li>Giúp trung hòa axit dư trong cơ thể, hỗ trợ tiêu hóa.</li>
+                        <li>Cung cấp nước giàu hydro, chống oxy hóa hiệu quả.</li>
+                        <li>Hỗ trợ làm đẹp da và tăng cường hệ miễn dịch.</li>
+                        <li>Phù hợp cho nấu ăn và pha chế, giữ nguyên hương vị tự nhiên.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="showcase-section" id="products">
+        <div class="container">
+            <h2>Bộ Sưu Tập Sản Phẩm</h2>
+            <p class="subtitle">Trải nghiệm các giải pháp lọc nước chất lượng cao từ Tuyến Droppi, thiết kế cho mọi nhu cầu</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="ANHSP/i1.jpg" alt="Sản phẩm 1">
+                    <p>Máy lọc nước tiên tiến với công nghệ RO, đảm bảo nước sạch và an toàn.</p>
+                </div>
+                <div class="product-card">
+                    <img src="ANHSP/i2.jpg" alt="Sản phẩm 2">
+                    <p>Công nghệ Nano giữ khoáng chất tự nhiên, phù hợp cho gia đình.</p>
+                </div>
+                <div class="product-card">
+                    <img src="ANHSP/i3.jpg" alt="Sản phẩm 3">
+                    <p>Máy lọc UF bền bỉ, tiết kiệm năng lượng, nước sạch chất lượng cao.</p>
+                </div>
+                <div class="product-card">
+                    <img src="ANHSP/i4.jpg" alt="Sản phẩm 4">
+                    <p>Thiết kế hiện đại, công nghệ ion kiềm cho sức khỏe tối ưu.</p>
+                </div>
+                <div class="product-card">
+                    <img src="ANHSP/i5.jpg" alt="Sản phẩm 5">
+                    <p>Máy lọc nước di động, tiện lợi cho các hoạt động ngoài trời.</p>
+                </div>
+                <div class="product-card">
+                    <img src="ANHSP/i6.jpg" alt="Sản phẩm 6">
+                    <p>Công nghệ lọc tiên tiến, loại bỏ vi khuẩn hiệu quả.</p>
+                </div>
+                <div class="product-card">
+                    <img src="ANHSP/i7.jpg" alt="Sản phẩm 7">
+                    <p>Thiết kế nhỏ gọn, phù hợp cho căn hộ và văn phòng.</p>
+                </div>
+                <div class="product-card">
+                    <img src="ANHSP/i8.jpg" alt="Sản phẩm 8">
+                    <p>Máy lọc nước đa năng với công nghệ RO và Nano kết hợp.</p>
+                </div>
+                <div class="product-card">
+                    <img src="ANHSP/i9.jpg" alt="Sản phẩm 9">
+                    <p>Công nghệ lọc hiện đại, cung cấp nước giàu hydro.</p>
+                </div>
+                <div class="product-card">
+                    <img src="ANHSP/i10.jpg" alt="Sản phẩm 10">
+                    <p>Máy lọc nước thông minh với điều khiển từ xa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- QR Code Container -->
+    <div class="qr-code-container">
+        <a href="tel:0942853326" class="call-now-toggle">
+            <i class="fas fa-phone"></i>
+            <span>Gọi ngay</span>
+        </a>
+        <div class="qr-code-toggle" onclick="toggleQRCode()">
+            <i class="fas fa-comment-dots"></i>
+            <span>Quét QR ngay</span>
+        </div>
+        <div class="qr-code-content">
+            <img src="ANHSP/qrcode.png" alt="QR Code">
+            <p>Quét mã QR để tận hưởng mua sắm cùng Tuyến Droppii</p>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sản phẩm</h3>
+                    <ul>
+                        <li><a href="#">Máy lọc nước ion kiềm</a></li>
+                        <li><a href="#">Bộ lọc thay thế</a></li>
+                        <li><a href="#">Phụ kiện</a></li>
+                        <li><a href="sudung.html">Hướng dẫn sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hỗ trợ</h3>
+                    <ul>
+                        <li><a href="baohanh.html">Chính sách bảo hành</a></li>
+                        <li><a href="muahang.html">Hướng dẫn mua hàng</a></li>
+                        <li><a href="thanhtoan.html">Phương thức thanh toán</a></li>
+                        <li><a href="cauhoi.html">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-map-marked-alt"></i> 315/9 Kha Vạn Cân, Phường Hiệp Bình Chánh, Quận Thủ Đức, TP.HCM</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:hatien7171@gmail.com">hatien7171@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:0942853326">094 285 3326</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Bản đồ</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8025975232003!2d106.7120874!3d10.8264136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f294a19919%3A0xd3ebec144576d4ce!2zxJBp4buHbiBM4bqhbmggSHV5IEhvw6BuZw!5e0!3m2!1svi!2s!4v1754197601066!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/quanghatuyen6789"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/hoanghuy04081971/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>Bản quyền © 2025 TuyenDroppii. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+
+        // Slider Script
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+                dots[index].classList.remove('active');
+            });
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+                dots[index].classList.remove('active');
+            });
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+                dots[index].classList.remove('active');
+            });
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
+
+        function currentSlide(index) {
+            slideIndex = index;
+            slides.forEach((slide, i) => {
+                slide.style.display = 'none';
+                dots[i].classList.remove('active');
+            });
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
+
+        slides[slideIndex].style.display = 'block';
+        dots[slideIndex].classList.add('active');
+        setInterval(showSlides, 5000); // Auto slide every 5 seconds
+    </script>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm Hiểu Thêm - Nước Hydrogen</title>
+    <link rel="icon" href="ANHSP/LOGO/1.png"type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #005f99 0%, #0077c2 100%);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .navbar .logo {
+            color: #0077c2;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .logo:hover {
+            color: #005f99;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-nav li {
+            margin-left: 20px;
+        }
+
+        .navbar-nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 6px 10px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .navbar-nav a:hover {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .navbar-btn {
+            background-color: #000;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-btn:hover {
+            background-color: #333;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            color: #333;
+            cursor: pointer;
+        }
+        
+/* Content Section */
+        .content-section { padding: 80px 0; background: linear-gradient(135deg, #fff 0%, #f7fafc 100%); box-shadow: 0 15px 50px rgba(0,0,0,0.1); border-radius: 20px; margin: 20px; border: 2px solid #e2e8f0; }
+        .content-section .container { text-align: left; }
+        .content-section h2 { font-size: 2.8em; font-weight: 900; margin-bottom: 40px; background: linear-gradient(135deg, #0077c2, #005a9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; position: relative; text-align: center; }
+        .content-section h2::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 100px; height: 5px; background: linear-gradient(135deg, #0077c2, #005a9e); border-radius: 3px; }
+        .content-section .toc { list-style: none; padding: 0; margin-bottom: 50px; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        .content-section .toc a { background: linear-gradient(135deg, #0077c2, #005a9e); color: #fff; padding: 15px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(0, 119, 194, 0.3); border: 2px solid transparent; }
+        .content-section .toc a:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0, 119, 194, 0.4); border-color: #fff; }
+        .content-section h3 { font-size: 2em; font-weight: 700; margin-top: 50px; margin-bottom: 25px; color: #0077c2; position: relative; padding-left: 20px; }
+        .content-section h3::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 8px; height: 30px; background: linear-gradient(135deg, #0077c2, #005a9e); border-radius: 4px; }
+        .content-section h4 { font-size: 1.5em; font-weight: 700; margin-top: 30px; margin-bottom: 20px; color: #005a9e; position: relative; padding-left: 15px; }
+        .content-section h4::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 20px; background: linear-gradient(135deg, #005a9e, #0077c2); border-radius: 3px; }
+        .content-section p { margin-bottom: 20px; font-size: 1.1em; color: #4a5568; line-height: 1.8; }
+        .content-section ul { list-style: none; margin-left: 0; margin-bottom: 25px; }
+        .content-section li { margin-bottom: 12px; padding: 8px 0; padding-left: 25px; position: relative; color: #4a5568; }
+        .content-section li::before { content: '✓'; position: absolute; left: 0; color: #0077c2; font-weight: bold; font-size: 1.1em; }
+        .content-section img { display: block; margin: 30px auto; max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 3px solid #e2e8f0; transition: transform 0.3s ease; }
+        .content-section img:hover { transform: scale(1.02); }
+        .image-caption { text-align: center; font-style: italic; color: #666; margin-top: 10px; font-size: 0.95em; }
+        
+
+
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.95em;
+            position: relative;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer .footer-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        
+        footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        footer .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        footer .footer-section h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #fff;
+            position: relative;
+        }
+        
+        footer .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #fff;
+            opacity: 0.8;
+        }
+        
+        footer .footer-section p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            font-weight: 300;
+        }
+
+        footer .footer-section a {
+            color: #e6f0fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer .footer-section a:hover {
+            color: #fff;
+        }
+        
+        footer .footer-section p i {
+            font-size: 1.4em;
+            margin-right: 12px;
+            color: #e6f0fa;
+            transition: transform 0.3s ease;
+        }
+
+        footer .footer-section p i:hover {
+            transform: scale(1.2);
+        }
+
+        footer .map-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+        }
+
+        footer .map-container:hover {
+            transform: scale(1.03);
+        }
+
+        footer .map-container iframe {
+            width: 100%;
+            height: 220px;
+            border: 0;
+            display: block;
+        }
+
+        footer .social-links {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 2em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #e6f0fa;
+            transform: scale(1.2);
+        }
+
+        footer .footer-bottom {
+            margin-top: 20px;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-wrap: wrap;
+            }
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                background-color: #fff;
+            }
+            .navbar-nav.active {
+                display: flex;
+            }
+            .navbar-nav li {
+                margin: 8px 0;
+                text-align: center;
+            }
+            .navbar-btn {
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+            .hamburger {
+                display: block;
+            }
+            header h1 {
+                font-size: 2.5em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            .testimonials-section h2 {
+                font-size: 2.2em;
+            }
+            .testimonials-section p.subtitle {
+                font-size: 1.1em;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            footer .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            footer .footer-section {
+                text-align: center;
+            }
+            footer .footer-section p {
+                justify-content: center;
+            }
+            footer .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            footer .map-container iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tuyến Droppi</h1>
+            <p>Giải pháp chăm sóc sức khỏe toàn diện cho gia đình</p>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tuyến Droppi</a>
+            <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+            <ul class="navbar-nav">
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="products.html">TGLN</a></li>
+                <li><a href="index.html#technology">Công nghệ</a></li>
+                <li><a href="khachhang.html">Khách hàng</a></li>
+                <li><a href="kuchen.html">Kuchen</a></li>
+                <li><a href="trungbay.html">Ionpia</a></li>
+                <li><a href="baohanh.html">Bảo hành</a></li>
+                <li><a href="kienthuc.html">Sống Khỏe</a></li>
+                <li><a href="index.html#contact">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="content-section">
+        <div class="container">
+            <h2>Những điều cần biết về nước hydrogen</h2>
+            <ul class="toc">
+                <li><a href="#phan1">1. Nước hydrogen ion kiềm là gì?</a></li>
+                <li><a href="#phan2">2. Những lợi ích của nước hydrogen ion kiềm</a></li>
+                <li><a href="#phan3">3. Những vấn đề cần đặc biệt lưu ý khi sử dụng nước hydrogen</a></li>
+            </ul>
+            <div id="phan1">
+                <h3>1. Nước hydrogen ion kiềm là gì?</h3>
+                <p>Hiểu một cách đơn giản, nước hydrogen chỉ là nước có thông qua một số phương pháp sục thêm khí hydro vào trong. Cũng tương tự như nước có ga có chứa khí carbon dioxide hoà tan (CO2), hay nước oxy có chứa oxy hoà tan (O2). Và nước hydrogen cũng vậy chúng có chứa khí hydro hòa tan.</p>
+                <p>Nước hydrogen ion thường không có màu và mùi, độ pH của nước tinh khiết là 7, nước hydrogen chứa ion kiềm thường 8-8,5, nằm trong ngưỡng cho phép là 6,5-8,5 của Bộ Y tế, vì thế nước thường được khuyên nên sử dụng sau khi vừa mới rót ra bởi hydrogen là khí rất dễ bay hơi. Nước hydrogen vẫn có thể được dùng để đun sôi, vì chúng có đặc tính như nước lọc bình thường.</p>
+                <img src="ANHSP/m2.jpg" alt="Nước hydrogen là nước có chứa khí hydro hòa tan" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
+                <p class="image-caption">Nước hydrogen là nước có chứa khí hydro hòa tan</p>
+            </div>
+            <div id="phan2">
+                <h3>2. Những lợi ích của nước hydrogen ion kiềm</h3>
+                <p>Với đặc tính chống oxy hóa mạnh của Hydro nên nhiều chuyên gia cho rằng, hydrogen ion kiềm là nước tốt cho sức khỏe, khi sử dụng giúp loại bỏ axit dư thừa và các tác nhân gây hại trong cơ thể. Nước hydrogen ion kiềm có thể trung hòa các tác nhân gây lão hóa, đẩy nhanh quá trình hấp thu khoáng chất, bù nước hiệu quả. Bên cạnh đó, loại nước này cũng có thể sử dụng để làm sạch thực phẩm, chăm sóc sắc đẹp nhờ công dụng trong việc thẩm thấu nhanh qua da.</p>
+                <p>Nhờ những công dụng nổi bật trên mà hiện nay, các bệnh viện tại Nga và Nhật Bản đều đã đưa loại nước này vào sử dụng để đạt được những lợi ích tốt nhất về mặt sức khỏe.</p>
+                <p>Đặc biệt với nhóm người thường xuyên vận động cường độ cao như: vận động viên, người tập thể dục, thể thao dùng hydrogen ion kiềm sẽ có lợi nhiều hơn khi giúp cân bằng pH cơ thể. Không chỉ thế, nhiều bệnh nhân có vấn đề về tiêu hóa như dạ dày, gout, axit dạ dày, ợ chua cũng được khuyên dùng nước hydrogen ion kiềm. Bởi những đối tượng này là do tình trạng pH trong cơ thể nghiêng về acid, khi uống nước hydrogen ion kiềm sẽ có tác động trung hòa độ acid, hỗ trợ cải thiện các triệu chứng.</p>
+                <p>Theo một nghiên cứu của Khoa nghiên cứu Y học ở cấp độ tế bào công bố năm 2009 cho thấy, hydrogen trong nước kiềm có tác dụng làm chậm hơn quá trình lão hóa. Cũng nói về vấn đề này, Tiến sĩ Hayashi Hidemitsu, Viện Trưởng Viện Nước Nhật Bản đưa ra ý kiến “nước giàu hydrogen có khả năng hỗ trợ cải thiện tình trạng bệnh tiểu đường, bệnh phổi, gout, cao huyết áp, và một vài căn bệnh do quá trình lão hóa và oxy hóa trong cơ thể gây ra. Với những lợi ích trên, hiện nay nước hydrogen ion kiềm được đưa vào sử dụng rất phổ biến.</p>
+            </div>
+            <div id="phan3">
+                <h3>3. Những vấn đề cần đặc biệt lưu ý khi sử dụng nước hydrogen</h3>
+                <p>Khi đã giải đáp được câu hỏi, nước hydrogen là gì, bạn cũng cần chú ý đến một số vấn đề khi sử dụng hydrogen.</p>
+                <h4>3.1. Nước hydrogen nên dùng ngay sau khi rót ra</h4>
+                <p>Như đã chia sẻ, hydrogen vốn là các phân tử có kích thước siêu nhỏ có trong nước, vì thế chúng rất dễ bay hơi. Do đó, tốt nhất bạn nên dùng nước ngay sau khi rót ra và không để quá trong thời gian 15 phút. Việc để nước ra ngoài không khí càng lâu, chất lượng nước càng bị giảm sút.</p>
+                <h4>3.2. Nước hydrogen vẫn có thể đun sôi</h4>
+                <p>Một vài thí nghiệm cũng đã chỉ ra, nước hydrogen có thể đun sôi, tuy nhiên khi đun trên nhiệt độ cao hàm lượng chất hydrogen sẽ bay hơi hết, lúc này nước hydrogen chỉ còn như nước bình thường. Vì thế bạn hãy cân nhắc và chú ý điều này.</p>
+                <h4>3.3. Trẻ nhỏ vẫn có thể sử dụng nước hydrogen</h4>
+                <p>Với tính an toàn, hiện nay nước hydrogen hoàn toàn phù hợp dùng được cho trẻ nhỏ. Tuy nhiên, với đối tượng trẻ nhỏ tầm khoảng 6 tháng tuổi khi uống cần hâm nước ở nhiệt độ khoảng tầm 63 độ C là phù hợp. Do đó, có thể thấy nước hydrogen phù hợp với mọi đối tượng khác nhau.</p>
+                <img src="ANHSP/m3.jpg" alt="Nước hydrogen phù hợp với mọi đối tượng khác nhau, kể cả trẻ em" style="display: block; margin: 20px auto; max-width: 100%; height: auto;">
+                <p class="image-caption">Nước hydrogen phù hợp với mọi đối tượng khác nhau, kể cả trẻ em</p>
+                <h4>3.4. Nước hydrogen dùng an toàn cho sức khỏe</h4>
+                <p>Hiện nay không có bất cứ khuyến cáo nào về việc hạn chế dùng nước kiềm hydrogen, vì thế bạn có thể sử dụng như các loại nước khoáng thông thường trong tất cả các hoạt động ăn uống, sinh hoạt.</p>
+                <h4>3.5. Lượng nước hydrogen nên dùng mỗi ngày là bao nhiêu?</h4>
+                <p>Tùy theo cân nặng, chiều cao, độ tuổi, giới tính, nhu cầu mà lượng nước tiêu thụ ở mỗi cá thể cũng có sự khác biệt. Tuy nhiên, theo khuyến cáo, 2 - 2,5 lít nước/ ngày là lượng nước phù hợp nhất để tiêu thụ giúp đảm bảo sức khỏe và hệ tiêu hóa.</p>
+                <p>Hiện nay những loại máy lọc nước hydrogen rất phổ biến trên thị trường, vì thế bạn nên cân nhắc dựa trên những tiêu chí như: điều kiện kinh tế, nhu cầu sử dụng và mong muốn của bản thân để lựa chọn được sản phẩm lọc nước hydrogen sao cho an toàn.</p>
+            </div>
+        </div>
+    </section>
+     <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sản phẩm</h3>
+                    <ul>
+                        <li><a href="#">Máy lọc nước ion kiềm</a></li>
+                        <li><a href="#">Bộ lọc thay thế</a></li>
+                        <li><a href="#">Phụ kiện</a></li>
+                        <li><a href="sudung.html">Hướng dẫn sử dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hỗ trợ</h3>
+                    <ul>
+                        <li><a href="baohanh.html">Chính sách bảo hành</a></li>
+                        <li><a href="muahang.html">Hướng dẫn mua hàng</a></li>
+                        <li><a href="thanhtoan.html">Phương thức thanh toán</a></li>
+                        <li><a href="cauhoi.html">Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-map-marked-alt"></i> 315/9 Kha Vạn Cân, Phường Hiệp Bình Chánh, Quận Thủ Đức, TP.HCM</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:hatien7171@gmail.com">hatien7171@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:0942853326">094 285 3326</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Bản đồ</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8025975232003!2d106.7120874!3d10.8264136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f294a19919%3A0xd3ebec144576d4ce!2zxJBp4buHbiBM4bqhbmggSHV5IEhvw6BuZw!5e0!3m2!1svi!2s!4v1754197601066!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/quanghatuyen6789"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/hoanghuy04081971/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>Bản quyền © 2025 TuyenDroppii. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

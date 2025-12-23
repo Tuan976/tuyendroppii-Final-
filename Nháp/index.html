@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tuyến Droppii | Nước Ion Kiềm & Gia Dụng</title>
+  <link rel="icon" href="ANHSP/LOGO/1.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Poppins:wght@600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo brand">
+        <img src="ANHSP/LOGO/1.png" alt="Logo Tuyến Droppii">
+        <span>Tuyến Droppii</span>
+      </a>
+      <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html" class="active">Trang chủ</a></li>
+        <li><a href="gioithieu.html">Giới thiệu</a></li>
+        <li class="dropdown">
+          <a href="#products" class="dropdown-toggle">Sản phẩm <i class="fas fa-chevron-down chevron"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html"><i class="fas fa-water"></i> TGNL</a></li>
+            <li><a href="kuchen.html"><i class="fas fa-fire"></i> Kuchen</a></li>
+            <li><a href="trungbay.html"><i class="fas fa-bolt"></i> Ionpia</a></li>
+          </ul>
+        </li>
+        <li><a href="khachhang.html">Khách hàng</a></li>
+        <li><a href="baohanh.html">Bảo hành</a></li>
+        <li><a href="kienthuc.html">Sống Khỏe</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+      <a href="#contact" class="navbar-btn">Tư vấn miễn phí</a>
+    </div>
+  </nav>
+
+  <header class="hero-header">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <!-- ...existing content (if any backup)... -->
+        <h1>Nâng Tầm Sức Khỏe Với Nước Ion Kiềm</h1>
+        <p class="subtitle">Công nghệ điện giải tiên tiến – an toàn, tinh khiết, tốt cho cả gia đình.</p>
+        <div>
+          <a href="products.html" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Xem sản phẩm</a>
+          <a href="#contact" class="btn btn-secondary"><i class="fas fa-phone"></i> Liên hệ</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+        <p class="section-subtitle">Được khách hàng tin dùng và đánh giá cao</p>
+      </div>
+      <div class="grid grid-3">
+        <a href="product-detail-1.html" class="product-card">
+          <img src="ANHSP/BTH-101T-510x510 (1).jpg" alt="Biontech BTH-101T">
+          <h4>Biontech BTH-101T</h4>
+          <p class="price">Liên hệ</p>
+          <span class="buy-btn">Xem chi tiết</span>
+        </a>
+        <a href="product-detail-2.html" class="product-card">
+          <img src="ANHSP/BTM-505N-510x510.jpg" alt="Biontech BTM-505N">
+          <h4>Biontech BTM-505N</h4>
+          <p class="price">Liên hệ</p>
+          <span class="buy-btn">Xem chi tiết</span>
+        </a>
+        <a href="product-detail-3.html" class="
+          <img src="ANHSP/Watek-nóng-lạnh-WT-030S-UF-510x510.png" alt="Watek WT-030S-RO">
+          <h4>Watek WT-030S-RO</h4>
+          <p class="price">Liên hệ</p>
+          <span class="buy-btn">Xem chi tiết</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Liên Hệ Tư Vấn</h2>
+        <p class="section-subtitle">Đội ngũ sẵn sàng hỗ trợ bạn 24/7</p>
+      </div>
+
+      <!-- Status notice -->
+      <div id="contact-status" style="display:none;margin-bottom:12px;padding:10px 12px;border-radius:8px;font-weight:600;"></div>
+
+      <div class="form-container">
+        <form action="/send_message.php" method="POST" class="contact-form">
+          <!-- optional subject to help categorize -->
+          <input type="hidden" name="subject" value="Liên hệ từ trang chủ (index.html)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Họ và tên *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Số điện thoại *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Nội dung *</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tôi cần tư vấn về..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Gửi tin nhắn</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="qr-code-container">
+    <a href="tel:0942853326" class="call-now-toggle">
+      <i class="fas fa-phone"></i><span>Gọi ngay</span>
+    </a>
+    <div class="qr-code-toggle" onclick="toggleQRCode()">
+      <i class="fas fa-comment-dots"></i><span>Quét QR</span>
+    </div>
+    <div class="qr-code-content">
+      <img src="ANHSP/qrcode.png" alt="QR Code">
+      <p>Quét mã để liên hệ nhanh Zalo</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Sản phẩm</h3>
+          <ul>
+            <li><a href="products.html">Máy lọc nước ion kiềm</a></li>
+            <li><a href="kuchen.html">Bếp từ Kuchen</a></li>
+            <li><a href="trungbay.html">Ionpia</a></li>
+            <li><a href="sudung.html">Hướng dẫn sử dụng</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Hỗ trợ</h3>
+          <ul>
+            <li><a href="baohanh.html">Chính sách bảo hành</a></li>
+            <li><a href="muahang.html">Hướng dẫn mua hàng</a></li>
+            <li><a href="thanhtoan.html">Phương thức thanh toán</a></li>
+            <li><a href="cauhoi.html">Câu hỏi thường gặp</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Liên hệ</h3>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:bophanhotrohuyhoang@gmail.com">bophanhotrohuyhoang@gmail.com</a></p>
+          <p><i class="fas fa-phone"></i> <a href="tel:0942853326">094 285 3326</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Bản đồ</h3>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8025975232003!2d106.7120874!3d10.8264136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f294a19919%3A0xd3ebec144576d4ce!2zxJBp4buHbiBM4bqhbmggSHV5IEhvw6BuZw!5e0!3m2!1svi!2s!4v1754197601066!5m2!1svi!2s" width="600" height="220" style="border:0;" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Bản quyền © 2025 Tuyến Droppii. Tất cả quyền được bảo lưu.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="common.js"></script>
+  <script>
+  // Show status from ?status=success|error
+  (function(){
+    const el = document.getElementById('contact-status');
+    if (!el) return;
+    const params = new URLSearchParams(location.search);
+    const status = params.get('status');
+    if (!status) return;
+    if (status === 'success') {
+      el.style.display = 'block';
+      el.style.background = '#ecfdf5';
+      el.style.border = '1px solid #10b981';
+      el.style.color = '#065f46';
+      el.textContent = 'Đã gửi yêu cầu. Chúng tôi sẽ liên hệ sớm.';
+    } else if (status === 'error') {
+      el.style.display = 'block';
+      el.style.background = '#fef2f2';
+      el.style.border = '1px solid #ef4444';
+      el.style.color = '#7f1d1d';
+      el.textContent = 'Gửi thất bại. Vui lòng kiểm tra lại thông tin và thử lại.';
+    }
+    // Clean the query param to avoid persisting status on refresh
+    history.replaceState({}, '', location.pathname + '#contact');
+  })();
+  </script>
+</body>
+</html>
